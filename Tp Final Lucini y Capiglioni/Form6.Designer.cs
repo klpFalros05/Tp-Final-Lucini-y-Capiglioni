@@ -1,6 +1,6 @@
 ﻿namespace Tp_Final_Lucini_y_Capiglioni
 {
-    partial class Form3
+    partial class Form6
     {
         /// <summary>
         /// Required designer variable.
@@ -28,172 +28,148 @@
         /// </summary>
         private void InitializeComponent()
         {
+            dataGridView1 = new DataGridView();
+            lblVendedores = new Label();
             lblNombre = new Label();
             lblApellido = new Label();
             txtNombre = new TextBox();
             txtApellido = new TextBox();
-            dataGridView1 = new DataGridView();
-            lblClientes = new Label();
             btnAgregar = new Button();
             btnModificar = new Button();
             btnEliminar = new Button();
-            lblTipoDeCliente = new Label();
-            cbTipoDeCliente = new ComboBox();
-            nudDescuento = new NumericUpDown();
-            lblDescuento = new Label();
+            cbSucursal = new ComboBox();
+            lblSucursal = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)nudDescuento).BeginInit();
             SuspendLayout();
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(41, 57);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(240, 277);
+            dataGridView1.TabIndex = 0;
+            // 
+            // lblVendedores
+            // 
+            lblVendedores.AutoSize = true;
+            lblVendedores.Location = new Point(52, 30);
+            lblVendedores.Name = "lblVendedores";
+            lblVendedores.Size = new Size(68, 15);
+            lblVendedores.TabIndex = 1;
+            lblVendedores.Text = "Vendedores";
             // 
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.Location = new Point(78, 316);
+            lblNombre.Location = new Point(327, 100);
             lblNombre.Name = "lblNombre";
             lblNombre.Size = new Size(51, 15);
-            lblNombre.TabIndex = 0;
+            lblNombre.TabIndex = 2;
             lblNombre.Text = "Nombre";
             // 
             // lblApellido
             // 
             lblApellido.AutoSize = true;
-            lblApellido.Location = new Point(213, 316);
+            lblApellido.Location = new Point(327, 165);
             lblApellido.Name = "lblApellido";
             lblApellido.Size = new Size(51, 15);
-            lblApellido.TabIndex = 1;
+            lblApellido.TabIndex = 3;
             lblApellido.Text = "Apellido";
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(78, 334);
+            txtNombre.Location = new Point(327, 118);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(100, 23);
-            txtNombre.TabIndex = 2;
+            txtNombre.TabIndex = 4;
             // 
             // txtApellido
             // 
-            txtApellido.Location = new Point(213, 334);
+            txtApellido.Location = new Point(327, 183);
             txtApellido.Name = "txtApellido";
             txtApellido.Size = new Size(100, 23);
-            txtApellido.TabIndex = 3;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(23, 46);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(628, 233);
-            dataGridView1.TabIndex = 4;
-            // 
-            // lblClientes
-            // 
-            lblClientes.AutoSize = true;
-            lblClientes.Location = new Point(36, 18);
-            lblClientes.Name = "lblClientes";
-            lblClientes.Size = new Size(49, 15);
-            lblClientes.TabIndex = 5;
-            lblClientes.Text = "Clientes";
+            txtApellido.TabIndex = 5;
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(78, 390);
+            btnAgregar.Location = new Point(495, 114);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(100, 30);
+            btnAgregar.Size = new Size(100, 29);
             btnAgregar.TabIndex = 6;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
             // 
             // btnModificar
             // 
-            btnModificar.Location = new Point(213, 390);
+            btnModificar.Location = new Point(495, 179);
             btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(100, 30);
+            btnModificar.Size = new Size(100, 29);
             btnModificar.TabIndex = 7;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = true;
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(343, 390);
+            btnEliminar.Location = new Point(495, 242);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(100, 30);
+            btnEliminar.Size = new Size(100, 29);
             btnEliminar.TabIndex = 8;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
             // 
-            // lblTipoDeCliente
+            // cbSucursal
             // 
-            lblTipoDeCliente.AutoSize = true;
-            lblTipoDeCliente.Location = new Point(343, 314);
-            lblTipoDeCliente.Name = "lblTipoDeCliente";
-            lblTipoDeCliente.Size = new Size(85, 15);
-            lblTipoDeCliente.TabIndex = 9;
-            lblTipoDeCliente.Text = "Tipo de cliente";
+            cbSucursal.FormattingEnabled = true;
+            cbSucursal.Location = new Point(327, 248);
+            cbSucursal.Name = "cbSucursal";
+            cbSucursal.Size = new Size(121, 23);
+            cbSucursal.TabIndex = 9;
             // 
-            // cbTipoDeCliente
+            // lblSucursal
             // 
-            cbTipoDeCliente.FormattingEnabled = true;
-            cbTipoDeCliente.Location = new Point(343, 334);
-            cbTipoDeCliente.Name = "cbTipoDeCliente";
-            cbTipoDeCliente.Size = new Size(100, 23);
-            cbTipoDeCliente.TabIndex = 10;
+            lblSucursal.AutoSize = true;
+            lblSucursal.Location = new Point(327, 230);
+            lblSucursal.Name = "lblSucursal";
+            lblSucursal.Size = new Size(51, 15);
+            lblSucursal.TabIndex = 10;
+            lblSucursal.Text = "Sucursal";
             // 
-            // nudDescuento
-            // 
-            nudDescuento.Location = new Point(479, 334);
-            nudDescuento.Name = "nudDescuento";
-            nudDescuento.Size = new Size(100, 23);
-            nudDescuento.TabIndex = 11;
-            // 
-            // lblDescuento
-            // 
-            lblDescuento.AutoSize = true;
-            lblDescuento.Location = new Point(479, 314);
-            lblDescuento.Name = "lblDescuento";
-            lblDescuento.Size = new Size(63, 15);
-            lblDescuento.TabIndex = 12;
-            lblDescuento.Text = "Descuento";
-            // 
-            // Form3
+            // Form6
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(677, 450);
-            Controls.Add(lblDescuento);
-            Controls.Add(nudDescuento);
-            Controls.Add(cbTipoDeCliente);
-            Controls.Add(lblTipoDeCliente);
+            ClientSize = new Size(648, 381);
+            Controls.Add(lblSucursal);
+            Controls.Add(cbSucursal);
             Controls.Add(btnEliminar);
             Controls.Add(btnModificar);
             Controls.Add(btnAgregar);
-            Controls.Add(lblClientes);
-            Controls.Add(dataGridView1);
             Controls.Add(txtApellido);
             Controls.Add(txtNombre);
             Controls.Add(lblApellido);
             Controls.Add(lblNombre);
-            Name = "Form3";
-            Text = "Form3";
+            Controls.Add(lblVendedores);
+            Controls.Add(dataGridView1);
+            Name = "Form6";
+            Text = "Form6";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)nudDescuento).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
+        private DataGridView dataGridView1;
+        private Label lblVendedores;
         private Label lblNombre;
         private Label lblApellido;
         private TextBox txtNombre;
         private TextBox txtApellido;
-        private DataGridView dataGridView1;
-        private Label lblClientes;
         private Button btnAgregar;
         private Button btnModificar;
         private Button btnEliminar;
-        private Label lblTipoDeCliente;
-        private ComboBox cbTipoDeCliente;
-        private NumericUpDown nudDescuento;
-        private Label lblDescuento;
+        private ComboBox cbSucursal;
+        private Label lblSucursal;
     }
 }
