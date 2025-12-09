@@ -37,7 +37,7 @@
             txtCategoria = new TextBox();
             lblCategoria = new Label();
             lblPrecio = new Label();
-            dataGridView1 = new DataGridView();
+            dgvProductos = new DataGridView();
             lblProductos = new Label();
             btnAgregar = new Button();
             btnModificar = new Button();
@@ -45,7 +45,7 @@
             nudPrecio = new NumericUpDown();
             nudCantidad = new NumericUpDown();
             lblCantidad = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudPrecio).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudCantidad).BeginInit();
             SuspendLayout();
@@ -123,13 +123,14 @@
             lblPrecio.TabIndex = 8;
             lblPrecio.Text = "Precio";
             // 
-            // dataGridView1
+            // dgvProductos
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(27, 35);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(707, 230);
-            dataGridView1.TabIndex = 12;
+            dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvProductos.Location = new Point(27, 35);
+            dgvProductos.Name = "dgvProductos";
+            dgvProductos.Size = new Size(707, 230);
+            dgvProductos.TabIndex = 12;
+            dgvProductos.SelectionChanged += dgvProductos_SelectionChanged;
             // 
             // lblProductos
             // 
@@ -148,6 +149,7 @@
             btnAgregar.TabIndex = 14;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += btnAgregar_Click;
             // 
             // btnModificar
             // 
@@ -157,6 +159,7 @@
             btnModificar.TabIndex = 15;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = true;
+            btnModificar.Click += btnModificar_Click;
             // 
             // btnEliminar
             // 
@@ -166,6 +169,7 @@
             btnEliminar.TabIndex = 16;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // nudPrecio
             // 
@@ -202,7 +206,7 @@
             Controls.Add(btnModificar);
             Controls.Add(btnAgregar);
             Controls.Add(lblProductos);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvProductos);
             Controls.Add(lblPrecio);
             Controls.Add(txtCategoria);
             Controls.Add(lblCategoria);
@@ -214,7 +218,8 @@
             Controls.Add(lblCodigo);
             Name = "Form2";
             Text = "Form2";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += Form2_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvProductos).EndInit();
             ((System.ComponentModel.ISupportInitialize)nudPrecio).EndInit();
             ((System.ComponentModel.ISupportInitialize)nudCantidad).EndInit();
             ResumeLayout(false);
@@ -232,7 +237,7 @@
         private TextBox txtCategoria;
         private Label lblCategoria;
         private Label lblPrecio;
-        private DataGridView dataGridView1;
+        private DataGridView dgvProductos;
         private Label lblProductos;
         private Button btnAgregar;
         private Button btnModificar;
