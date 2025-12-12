@@ -28,37 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
+            dgvSucursales = new DataGridView();
             lblSucursales = new Label();
-            txtNombre = new TextBox();
+            txtNombreSucursal = new TextBox();
             lblNombre = new Label();
             btnAgregar = new Button();
             btnEliminar = new Button();
-            dataGridView2 = new DataGridView();
+            dgvProductosStock = new DataGridView();
             lblStockDeProductos = new Label();
-            dataGridView3 = new DataGridView();
-            comboBox1 = new ComboBox();
+            dgvStockPorSucursal = new DataGridView();
+            cmbSucursalAsignar = new ComboBox();
             lblStockPorSucursal = new Label();
-            numericUpDown1 = new NumericUpDown();
+            nudCantidadAsignar = new NumericUpDown();
             lblSucursal = new Label();
             lblCantidad = new Label();
             btnAgregarStockSucursal = new Button();
-            comboBox2 = new ComboBox();
+            cmbSucursalVer = new ComboBox();
             lblSucursalConStock = new Label();
             btnProductosPorSucursal = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvSucursales).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvProductosStock).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvStockPorSucursal).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nudCantidadAsignar).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dgvSucursales
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(23, 49);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(157, 174);
-            dataGridView1.TabIndex = 0;
+            dgvSucursales.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvSucursales.Location = new Point(23, 49);
+            dgvSucursales.Name = "dgvSucursales";
+            dgvSucursales.Size = new Size(246, 174);
+            dgvSucursales.TabIndex = 0;
             // 
             // lblSucursales
             // 
@@ -69,17 +69,17 @@
             lblSucursales.TabIndex = 1;
             lblSucursales.Text = "Sucursales";
             // 
-            // txtNombre
+            // txtNombreSucursal
             // 
-            txtNombre.Location = new Point(197, 73);
-            txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(100, 23);
-            txtNombre.TabIndex = 2;
+            txtNombreSucursal.Location = new Point(309, 86);
+            txtNombreSucursal.Name = "txtNombreSucursal";
+            txtNombreSucursal.Size = new Size(100, 23);
+            txtNombreSucursal.TabIndex = 2;
             // 
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.Location = new Point(197, 55);
+            lblNombre.Location = new Point(309, 68);
             lblNombre.Name = "lblNombre";
             lblNombre.Size = new Size(51, 15);
             lblNombre.TabIndex = 3;
@@ -87,54 +87,56 @@
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(197, 115);
+            btnAgregar.Location = new Point(309, 128);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(100, 26);
             btnAgregar.TabIndex = 4;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += btnAgregar_Click;
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(197, 157);
+            btnEliminar.Location = new Point(309, 170);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(100, 26);
             btnEliminar.TabIndex = 5;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
-            // dataGridView2
+            // dgvProductosStock
             // 
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(388, 49);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.Size = new Size(533, 174);
-            dataGridView2.TabIndex = 6;
+            dgvProductosStock.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvProductosStock.Location = new Point(559, 49);
+            dgvProductosStock.Name = "dgvProductosStock";
+            dgvProductosStock.Size = new Size(533, 174);
+            dgvProductosStock.TabIndex = 6;
             // 
             // lblStockDeProductos
             // 
             lblStockDeProductos.AutoSize = true;
-            lblStockDeProductos.Location = new Point(401, 20);
+            lblStockDeProductos.Location = new Point(572, 20);
             lblStockDeProductos.Name = "lblStockDeProductos";
             lblStockDeProductos.Size = new Size(112, 15);
             lblStockDeProductos.TabIndex = 7;
             lblStockDeProductos.Text = " Stock de productos";
             // 
-            // dataGridView3
+            // dgvStockPorSucursal
             // 
-            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView3.Location = new Point(23, 293);
-            dataGridView3.Name = "dataGridView3";
-            dataGridView3.Size = new Size(761, 181);
-            dataGridView3.TabIndex = 8;
+            dgvStockPorSucursal.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvStockPorSucursal.Location = new Point(23, 293);
+            dgvStockPorSucursal.Name = "dgvStockPorSucursal";
+            dgvStockPorSucursal.Size = new Size(761, 181);
+            dgvStockPorSucursal.TabIndex = 8;
             // 
-            // comboBox1
+            // cmbSucursalAsignar
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(950, 67);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 9;
+            cmbSucursalAsignar.FormattingEnabled = true;
+            cmbSucursalAsignar.Location = new Point(1121, 67);
+            cmbSucursalAsignar.Name = "cmbSucursalAsignar";
+            cmbSucursalAsignar.Size = new Size(121, 23);
+            cmbSucursalAsignar.TabIndex = 9;
             // 
             // lblStockPorSucursal
             // 
@@ -145,17 +147,17 @@
             lblStockPorSucursal.TabIndex = 10;
             lblStockPorSucursal.Text = "Stock Por Sucursal";
             // 
-            // numericUpDown1
+            // nudCantidadAsignar
             // 
-            numericUpDown1.Location = new Point(951, 132);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(120, 23);
-            numericUpDown1.TabIndex = 11;
+            nudCantidadAsignar.Location = new Point(1122, 132);
+            nudCantidadAsignar.Name = "nudCantidadAsignar";
+            nudCantidadAsignar.Size = new Size(120, 23);
+            nudCantidadAsignar.TabIndex = 11;
             // 
             // lblSucursal
             // 
             lblSucursal.AutoSize = true;
-            lblSucursal.Location = new Point(950, 49);
+            lblSucursal.Location = new Point(1121, 49);
             lblSucursal.Name = "lblSucursal";
             lblSucursal.Size = new Size(51, 15);
             lblSucursal.TabIndex = 12;
@@ -164,7 +166,7 @@
             // lblCantidad
             // 
             lblCantidad.AutoSize = true;
-            lblCantidad.Location = new Point(951, 111);
+            lblCantidad.Location = new Point(1122, 111);
             lblCantidad.Name = "lblCantidad";
             lblCantidad.Size = new Size(55, 15);
             lblCantidad.TabIndex = 13;
@@ -172,20 +174,20 @@
             // 
             // btnAgregarStockSucursal
             // 
-            btnAgregarStockSucursal.Location = new Point(965, 176);
+            btnAgregarStockSucursal.Location = new Point(1136, 176);
             btnAgregarStockSucursal.Name = "btnAgregarStockSucursal";
             btnAgregarStockSucursal.Size = new Size(91, 50);
             btnAgregarStockSucursal.TabIndex = 14;
             btnAgregarStockSucursal.Text = "Agregar stock a la sucursal";
             btnAgregarStockSucursal.UseVisualStyleBackColor = true;
             // 
-            // comboBox2
+            // cmbSucursalVer
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(816, 342);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(140, 23);
-            comboBox2.TabIndex = 15;
+            cmbSucursalVer.FormattingEnabled = true;
+            cmbSucursalVer.Location = new Point(816, 342);
+            cmbSucursalVer.Name = "cmbSucursalVer";
+            cmbSucursalVer.Size = new Size(140, 23);
+            cmbSucursalVer.TabIndex = 15;
             // 
             // lblSucursalConStock
             // 
@@ -209,53 +211,53 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1112, 496);
+            ClientSize = new Size(1260, 496);
             Controls.Add(btnProductosPorSucursal);
             Controls.Add(lblSucursalConStock);
-            Controls.Add(comboBox2);
+            Controls.Add(cmbSucursalVer);
             Controls.Add(btnAgregarStockSucursal);
             Controls.Add(lblCantidad);
             Controls.Add(lblSucursal);
-            Controls.Add(numericUpDown1);
+            Controls.Add(nudCantidadAsignar);
             Controls.Add(lblStockPorSucursal);
-            Controls.Add(comboBox1);
-            Controls.Add(dataGridView3);
+            Controls.Add(cmbSucursalAsignar);
+            Controls.Add(dgvStockPorSucursal);
             Controls.Add(lblStockDeProductos);
-            Controls.Add(dataGridView2);
+            Controls.Add(dgvProductosStock);
             Controls.Add(btnEliminar);
             Controls.Add(btnAgregar);
             Controls.Add(lblNombre);
-            Controls.Add(txtNombre);
+            Controls.Add(txtNombreSucursal);
             Controls.Add(lblSucursales);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvSucursales);
             Name = "Form5";
             Text = "Form5";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvSucursales).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvProductosStock).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvStockPorSucursal).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudCantidadAsignar).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView dgvSucursales;
         private Label lblSucursales;
-        private TextBox txtNombre;
+        private TextBox txtNombreSucursal;
         private Label lblNombre;
         private Button btnAgregar;
         private Button btnEliminar;
-        private DataGridView dataGridView2;
+        private DataGridView dgvProductosStock;
         private Label lblStockDeProductos;
-        private DataGridView dataGridView3;
-        private ComboBox comboBox1;
+        private DataGridView dgvStockPorSucursal;
+        private ComboBox cmbSucursalAsignar;
         private Label lblStockPorSucursal;
-        private NumericUpDown numericUpDown1;
+        private NumericUpDown nudCantidadAsignar;
         private Label lblSucursal;
         private Label lblCantidad;
         private Button btnAgregarStockSucursal;
-        private ComboBox comboBox2;
+        private ComboBox cmbSucursalVer;
         private Label lblSucursalConStock;
         private Button btnProductosPorSucursal;
     }

@@ -13,6 +13,6 @@ namespace Entidades
         public Sucursal Sucursal { get; set; } = null!;
         public int ProductoId { get; set; }
         public Producto Producto { get; set; } = null!;
-        public int cantidad { get; set; }
+        public int Cantidad { get; set; }
     }
 }
