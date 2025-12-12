@@ -29,7 +29,6 @@ namespace Controladora
         private ControladoraProductos() { }
 
         // ---------- Métodos que usa la Vista -----------
-
         public List<Producto> ListarProductos()
         {
             return repositorioProductos.Listar();
