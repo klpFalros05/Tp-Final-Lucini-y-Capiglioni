@@ -9,5 +9,6 @@ namespace Entidades
     public class Sucursal
     {
         public int SucursalId { get; set; }
+        public string NombreSucursal { get; set; }
     }
 }
