@@ -9,6 +9,9 @@ namespace Entidades
     public class Sucursal
     {
         public int SucursalId { get; set; }
-        public string NombreSucursal { get; set; }
+        public string NombreSucursal { get; set; } = string.Empty;
+
+        /// una sucursal tiene muchos stocks
+        public List<Stock> Stocks { get; set; } = new();
     }
 }
