@@ -18,8 +18,7 @@ namespace Tp_Final_Lucini_y_Capiglioni
         {
             InitializeComponent();
         }
-
-        private void Form5_Load(object sender, EventArgs e)
+        private void Form5_Load_1(object sender, EventArgs e)
         {
             ConfigurarGrillas();
             CargarSucursales();
@@ -178,7 +177,7 @@ namespace Tp_Final_Lucini_y_Capiglioni
         private Producto? ProductoSeleccionado =>
             dgvProductosStock.CurrentRow?.DataBoundItem as Producto;
 
-        private void btnAgregarStockSucursal_Click(object sender, EventArgs e)
+        private void btnAgregarStockSucursal_Click_2(object sender, EventArgs e)
         {
             var prod = ProductoSeleccionado;
             if (prod == null)
@@ -208,8 +207,9 @@ namespace Tp_Final_Lucini_y_Capiglioni
 
                 MessageBox.Show(msg, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // refrescamos la grilla inferior para esa sucursal
-                CargarStockPorSucursal(sucursalId);
+                // Refrescamos las dos vistas:
+                CargarStockPorSucursal(sucursalId); // grilla inferior
+                CargarProductos();                  // grilla de stock general
             }
             catch (Exception ex)
             {
@@ -219,7 +219,7 @@ namespace Tp_Final_Lucini_y_Capiglioni
         }
 
         // ================== VER STOCK POR SUCURSAL ==================
-        private void btnProductosPorSucursal_Click(object sender, EventArgs e)
+        private void btnProductosPorSucursal_Click_1(object sender, EventArgs e)
         {
             if (cmbSucursalVer.SelectedValue == null)
             {
