@@ -20,7 +20,7 @@ namespace Modelo
         public List<Producto> Listar()
         {
             return context.Productos
-                          //.AsNoTracking()
+                          .AsNoTracking()
                           .OrderBy(p => p.Nombre)
                           .ToList();
         }

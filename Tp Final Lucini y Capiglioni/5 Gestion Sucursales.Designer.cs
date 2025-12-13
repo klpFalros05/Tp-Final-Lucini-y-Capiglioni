@@ -180,6 +180,7 @@
             btnAgregarStockSucursal.TabIndex = 14;
             btnAgregarStockSucursal.Text = "Agregar stock a la sucursal";
             btnAgregarStockSucursal.UseVisualStyleBackColor = true;
+            btnAgregarStockSucursal.Click += btnAgregarStockSucursal_Click_2;
             // 
             // cmbSucursalVer
             // 
@@ -206,6 +207,7 @@
             btnProductosPorSucursal.TabIndex = 17;
             btnProductosPorSucursal.Text = "Productos Por Sucursal";
             btnProductosPorSucursal.UseVisualStyleBackColor = true;
+            btnProductosPorSucursal.Click += btnProductosPorSucursal_Click_1;
             // 
             // Form5
             // 
@@ -232,6 +234,7 @@
             Controls.Add(dgvSucursales);
             Name = "Form5";
             Text = "Form5";
+            Load += Form5_Load_1;
             ((System.ComponentModel.ISupportInitialize)dgvSucursales).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvProductosStock).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvStockPorSucursal).EndInit();
