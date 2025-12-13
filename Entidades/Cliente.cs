@@ -1,6 +1,6 @@
 ﻿namespace Entidades
 {
-    public class Cliente
+    public abstract class Cliente
     {   
         public int ClienteId { get; set; }
         public string Nombre { get; set; } = string.Empty;
