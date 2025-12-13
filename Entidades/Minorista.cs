@@ -8,6 +8,6 @@ namespace Entidades
 {
     public class Minorista : Cliente
     {
-        public decimal Descuento { get; set; } = 0.05m;
+        public decimal Descuento { get; set; } = 0m;
     }
 }
