@@ -40,17 +40,18 @@
             // lblMenuPrincipal
             // 
             lblMenuPrincipal.AutoSize = true;
-            lblMenuPrincipal.Location = new Point(155, 30);
+            lblMenuPrincipal.Location = new Point(192, 57);
             lblMenuPrincipal.Name = "lblMenuPrincipal";
-            lblMenuPrincipal.Size = new Size(87, 15);
+            lblMenuPrincipal.Size = new Size(91, 20);
             lblMenuPrincipal.TabIndex = 0;
-            lblMenuPrincipal.Text = "Menu Principal";
+            lblMenuPrincipal.Text = "Bienvenido!!";
             // 
             // btnRegistrarProductos
             // 
-            btnRegistrarProductos.Location = new Point(76, 69);
+            btnRegistrarProductos.Location = new Point(70, 90);
+            btnRegistrarProductos.Margin = new Padding(3, 4, 3, 4);
             btnRegistrarProductos.Name = "btnRegistrarProductos";
-            btnRegistrarProductos.Size = new Size(121, 30);
+            btnRegistrarProductos.Size = new Size(161, 40);
             btnRegistrarProductos.TabIndex = 1;
             btnRegistrarProductos.Text = "Registrar Productos";
             btnRegistrarProductos.UseVisualStyleBackColor = true;
@@ -58,9 +59,10 @@
             // 
             // btnRegistarVentas
             // 
-            btnRegistarVentas.Location = new Point(76, 141);
+            btnRegistarVentas.Location = new Point(70, 186);
+            btnRegistarVentas.Margin = new Padding(3, 4, 3, 4);
             btnRegistarVentas.Name = "btnRegistarVentas";
-            btnRegistarVentas.Size = new Size(121, 30);
+            btnRegistarVentas.Size = new Size(161, 40);
             btnRegistarVentas.TabIndex = 2;
             btnRegistarVentas.Text = "Registrar Ventas";
             btnRegistarVentas.UseVisualStyleBackColor = true;
@@ -68,9 +70,10 @@
             // 
             // btnSucursalesStock
             // 
-            btnSucursalesStock.Location = new Point(76, 105);
+            btnSucursalesStock.Location = new Point(237, 90);
+            btnSucursalesStock.Margin = new Padding(3, 4, 3, 4);
             btnSucursalesStock.Name = "btnSucursalesStock";
-            btnSucursalesStock.Size = new Size(121, 30);
+            btnSucursalesStock.Size = new Size(161, 40);
             btnSucursalesStock.TabIndex = 3;
             btnSucursalesStock.Text = "Sucursales/Stock";
             btnSucursalesStock.UseVisualStyleBackColor = true;
@@ -78,9 +81,10 @@
             // 
             // btnReportes
             // 
-            btnReportes.Location = new Point(203, 141);
+            btnReportes.Location = new Point(237, 186);
+            btnReportes.Margin = new Padding(3, 4, 3, 4);
             btnReportes.Name = "btnReportes";
-            btnReportes.Size = new Size(121, 30);
+            btnReportes.Size = new Size(161, 40);
             btnReportes.TabIndex = 4;
             btnReportes.Text = "Reportes";
             btnReportes.UseVisualStyleBackColor = true;
@@ -88,9 +92,10 @@
             // 
             // btnRegistrarClientes
             // 
-            btnRegistrarClientes.Location = new Point(203, 69);
+            btnRegistrarClientes.Location = new Point(70, 138);
+            btnRegistrarClientes.Margin = new Padding(3, 4, 3, 4);
             btnRegistrarClientes.Name = "btnRegistrarClientes";
-            btnRegistrarClientes.Size = new Size(121, 30);
+            btnRegistrarClientes.Size = new Size(161, 40);
             btnRegistrarClientes.TabIndex = 5;
             btnRegistrarClientes.Text = "Registrar Clientes";
             btnRegistrarClientes.UseVisualStyleBackColor = true;
@@ -98,19 +103,20 @@
             // 
             // btnVendedores
             // 
-            btnVendedores.Location = new Point(203, 105);
+            btnVendedores.Location = new Point(237, 138);
+            btnVendedores.Margin = new Padding(3, 4, 3, 4);
             btnVendedores.Name = "btnVendedores";
-            btnVendedores.Size = new Size(121, 30);
+            btnVendedores.Size = new Size(161, 40);
             btnVendedores.TabIndex = 6;
-            btnVendedores.Text = "Vendedores";
+            btnVendedores.Text = "Registrar Vendedores";
             btnVendedores.UseVisualStyleBackColor = true;
             btnVendedores.Click += btnVendedores_Click;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(414, 220);
+            ClientSize = new Size(473, 293);
             Controls.Add(btnVendedores);
             Controls.Add(btnRegistrarClientes);
             Controls.Add(btnReportes);
@@ -118,8 +124,9 @@
             Controls.Add(btnRegistarVentas);
             Controls.Add(btnRegistrarProductos);
             Controls.Add(lblMenuPrincipal);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
-            Text = "Form1";
+            Text = "Menu Principal";
             ResumeLayout(false);
             PerformLayout();
         }
