@@ -32,7 +32,7 @@
             lblApellido = new Label();
             txtNombre = new TextBox();
             txtApellido = new TextBox();
-            dataGridView1 = new DataGridView();
+            dgvClientes = new DataGridView();
             lblClientes = new Label();
             btnAgregar = new Button();
             btnModificar = new Button();
@@ -43,7 +43,10 @@
             lblDescuento = new Label();
             btnMayoristas = new Button();
             btnMinoristas = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            btnTodosClientes = new Button();
+            lblDebe = new Label();
+            txtMontoDebe = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudDescuento).BeginInit();
             SuspendLayout();
             // 
@@ -81,15 +84,17 @@
             txtApellido.Size = new Size(114, 27);
             txtApellido.TabIndex = 3;
             // 
-            // dataGridView1
+            // dgvClientes
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(26, 61);
-            dataGridView1.Margin = new Padding(3, 4, 3, 4);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(718, 311);
-            dataGridView1.TabIndex = 4;
+            dgvClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvClientes.Location = new Point(26, 61);
+            dgvClientes.Margin = new Padding(3, 4, 3, 4);
+            dgvClientes.Name = "dgvClientes";
+            dgvClientes.RowHeadersWidth = 51;
+            dgvClientes.Size = new Size(794, 311);
+            dgvClientes.TabIndex = 4;
+            dgvClientes.CellClick += dgvClientes_CellClick;
+            dgvClientes.Click += dgvClientes_Click;
             // 
             // lblClientes
             // 
@@ -109,6 +114,7 @@
             btnAgregar.TabIndex = 6;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += btnAgregar_Click;
             // 
             // btnModificar
             // 
@@ -119,6 +125,7 @@
             btnModificar.TabIndex = 7;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = true;
+            btnModificar.Click += btnModificar_Click;
             // 
             // btnEliminar
             // 
@@ -129,6 +136,7 @@
             btnEliminar.TabIndex = 8;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // lblTipoDeCliente
             // 
@@ -147,6 +155,7 @@
             cbTipoDeCliente.Name = "cbTipoDeCliente";
             cbTipoDeCliente.Size = new Size(114, 28);
             cbTipoDeCliente.TabIndex = 10;
+            cbTipoDeCliente.SelectedIndexChanged += cbTipoDeCliente_SelectedIndexChanged;
             // 
             // nudDescuento
             // 
@@ -167,29 +176,63 @@
             // 
             // btnMayoristas
             // 
-            btnMayoristas.Location = new Point(499, 519);
+            btnMayoristas.Location = new Point(630, 519);
             btnMayoristas.Margin = new Padding(3, 4, 3, 4);
             btnMayoristas.Name = "btnMayoristas";
             btnMayoristas.Size = new Size(114, 40);
             btnMayoristas.TabIndex = 13;
             btnMayoristas.Text = "Mayoristas";
             btnMayoristas.UseVisualStyleBackColor = true;
+            btnMayoristas.Click += btnMayoristas_Click;
             // 
             // btnMinoristas
             // 
-            btnMinoristas.Location = new Point(630, 519);
+            btnMinoristas.Location = new Point(765, 519);
             btnMinoristas.Margin = new Padding(3, 4, 3, 4);
             btnMinoristas.Name = "btnMinoristas";
             btnMinoristas.Size = new Size(114, 40);
             btnMinoristas.TabIndex = 14;
             btnMinoristas.Text = "Minoristas";
             btnMinoristas.UseVisualStyleBackColor = true;
+            btnMinoristas.Click += btnMinoristas_Click;
+            // 
+            // btnTodosClientes
+            // 
+            btnTodosClientes.Location = new Point(499, 519);
+            btnTodosClientes.Margin = new Padding(3, 4, 3, 4);
+            btnTodosClientes.Name = "btnTodosClientes";
+            btnTodosClientes.Size = new Size(114, 40);
+            btnTodosClientes.TabIndex = 15;
+            btnTodosClientes.Text = "Todos";
+            btnTodosClientes.UseVisualStyleBackColor = true;
+            btnTodosClientes.Click += btnTodosClientes_Click;
+            // 
+            // lblDebe
+            // 
+            lblDebe.AutoSize = true;
+            lblDebe.Location = new Point(641, 450);
+            lblDebe.Name = "lblDebe";
+            lblDebe.Size = new Size(48, 20);
+            lblDebe.TabIndex = 16;
+            lblDebe.Text = "Debe:";
+            // 
+            // txtMontoDebe
+            // 
+            txtMontoDebe.Location = new Point(695, 447);
+            txtMontoDebe.Name = "txtMontoDebe";
+            txtMontoDebe.ReadOnly = true;
+            txtMontoDebe.Size = new Size(125, 27);
+            txtMontoDebe.TabIndex = 17;
+            txtMontoDebe.TabStop = false;
             // 
             // Form3
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(774, 600);
+            ClientSize = new Size(925, 600);
+            Controls.Add(txtMontoDebe);
+            Controls.Add(lblDebe);
+            Controls.Add(btnTodosClientes);
             Controls.Add(btnMinoristas);
             Controls.Add(btnMayoristas);
             Controls.Add(lblDescuento);
@@ -200,15 +243,16 @@
             Controls.Add(btnModificar);
             Controls.Add(btnAgregar);
             Controls.Add(lblClientes);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvClientes);
             Controls.Add(txtApellido);
             Controls.Add(txtNombre);
             Controls.Add(lblApellido);
             Controls.Add(lblNombre);
             Margin = new Padding(3, 4, 3, 4);
             Name = "Form3";
-            Text = "Form3";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Text = "Registrar Clientes";
+            Load += Form3_Load_1;
+            ((System.ComponentModel.ISupportInitialize)dgvClientes).EndInit();
             ((System.ComponentModel.ISupportInitialize)nudDescuento).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -220,7 +264,7 @@
         private Label lblApellido;
         private TextBox txtNombre;
         private TextBox txtApellido;
-        private DataGridView dataGridView1;
+        private DataGridView dgvClientes;
         private Label lblClientes;
         private Button btnAgregar;
         private Button btnModificar;
@@ -231,5 +275,8 @@
         private Label lblDescuento;
         private Button btnMayoristas;
         private Button btnMinoristas;
+        private Button btnTodosClientes;
+        private Label lblDebe;
+        private TextBox txtMontoDebe;
     }
 }
