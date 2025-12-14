@@ -20,7 +20,7 @@ namespace Modelo
         public List<Sucursal> Listar()
         {
             return context.Sucursales
-                           //.AsNoTracking()
+                           .AsNoTracking()
                            .OrderBy(s => s.NombreSucursal)
                            .ToList();
         }

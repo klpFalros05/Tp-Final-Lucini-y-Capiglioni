@@ -8,7 +8,9 @@ namespace Entidades
 {
     public class Mayorista : Cliente
     {
-        public decimal Descuento { get; set; } = 0.10m;
+        public decimal Descuento { get; set; } = 0m;
         public EstadoDeCuenta EstadoCuenta { get; set; } = EstadoDeCuenta.AlDia;
+
+        public decimal MontoDebe { get; set; } = 0m;
     }
 }

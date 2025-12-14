@@ -21,18 +21,18 @@ namespace Modelo
         public List<Stock> ListarPorSucursal(int sucursalId)
         {
             return context.Stocks
-                           .Include(s => s.Producto)
-                           .Include(s => s.Sucursal)
-                           .Where(s => s.SucursalId == sucursalId)
-                           .ToList();
+                          .Include(s => s.Producto)
+                          .Include(s => s.Sucursal)
+                          .Where(s => s.SucursalId == sucursalId)
+                          .ToList();
         }
 
         // Obtener la fila de stock de un producto en una sucursal
         public Stock? Obtener(int sucursalId, int productoId)
         {
             return context.Stocks
-                           .FirstOrDefault(s => s.SucursalId == sucursalId
-                                             && s.ProductoId == productoId);
+                          .FirstOrDefault(s => s.SucursalId == sucursalId &&
+                                               s.ProductoId == productoId);
         }
 
         // Agregar o actualizar stock (para no duplicar filas)
@@ -52,7 +52,6 @@ namespace Modelo
             }
             else
             {
-                // Podés sumar o reemplazar, según la lógica que quieras
                 stock.Cantidad += cantidad;
             }
 

@@ -27,24 +27,29 @@ namespace Controladora
         private ControladoraStockPorSucursal() { }
 
         public List<Stock> ListarPorSucursal(int sucursalId)
-        {
-            return repoStocks.ListarPorSucursal(sucursalId);
-        }
+            => repoStocks.ListarPorSucursal(sucursalId);
 
         public string AgregarStockASucursal(int sucursalId, int productoId, int cantidad)
         {
             if (cantidad <= 0)
                 throw new Exception("La cantidad debe ser mayor a cero.");
 
-            // (Opcional pero lindo para explicar a la profe):
-            // Validar que no se supere el stock total del producto.
+            // 1) Traigo el producto desde el repositorio
             var producto = repoProductos.ObtenerPorId(productoId)
                            ?? throw new Exception("Producto no encontrado.");
 
-            // Acá podrías calcular cuánto stock ya está asignado a sucursales
-            // y comparar con producto.StockTotal si querés ser más estricto.
+            // 2) Valido stock disponible en el depósito (stock general)
+            if (producto.StockTotal < cantidad)
+                throw new Exception(
+                    $"No hay stock suficiente en el depósito. Stock disponible: {producto.StockTotal}");
 
+            // 3) Descuento del stock general (depósito)
+            producto.StockTotal -= cantidad;
+            repoProductos.ModificarProducto(producto);  // guarda el cambio en la BD
+
+            // 4) Asigno el stock a la sucursal (crea/actualiza la fila en Stocks)
             repoStocks.AgregarOActualizar(sucursalId, productoId, cantidad);
+
             return "Stock asignado a la sucursal.";
         }
     }

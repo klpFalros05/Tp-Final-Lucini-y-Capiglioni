@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Modelo;
 
@@ -11,9 +12,11 @@ using Modelo;
 namespace Modelo.Migrations
 {
     [DbContext(typeof(ContextoVentas))]
-    partial class ContextoVentasModelSnapshot : ModelSnapshot
+    [Migration("20251212223641_SincronizarPostMerge")]
+    partial class SincronizarPostMerge
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -233,9 +236,6 @@ namespace Modelo.Migrations
 
                     b.Property<int>("EstadoCuenta")
                         .HasColumnType("int");
-
-                    b.Property<decimal>("MontoDebe")
-                        .HasColumnType("decimal(18,2)");
 
                     b.HasDiscriminator().HasValue("Mayorista");
                 });

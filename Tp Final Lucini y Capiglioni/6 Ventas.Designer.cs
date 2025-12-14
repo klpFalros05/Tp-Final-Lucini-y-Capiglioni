@@ -46,25 +46,28 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(72, 66);
+            dataGridView1.Location = new Point(82, 88);
+            dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(282, 150);
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(322, 200);
             dataGridView1.TabIndex = 0;
             // 
             // lblVentas
             // 
             lblVentas.AutoSize = true;
-            lblVentas.Location = new Point(72, 39);
+            lblVentas.Location = new Point(82, 52);
             lblVentas.Name = "lblVentas";
-            lblVentas.Size = new Size(41, 15);
+            lblVentas.Size = new Size(52, 20);
             lblVentas.TabIndex = 1;
             lblVentas.Text = "Ventas";
             // 
             // btnRegistrarVenta
             // 
-            btnRegistrarVenta.Location = new Point(72, 321);
+            btnRegistrarVenta.Location = new Point(82, 428);
+            btnRegistrarVenta.Margin = new Padding(3, 4, 3, 4);
             btnRegistrarVenta.Name = "btnRegistrarVenta";
-            btnRegistrarVenta.Size = new Size(117, 30);
+            btnRegistrarVenta.Size = new Size(134, 40);
             btnRegistrarVenta.TabIndex = 2;
             btnRegistrarVenta.Text = "Registrar venta";
             btnRegistrarVenta.UseVisualStyleBackColor = true;
@@ -72,66 +75,72 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(233, 263);
+            comboBox1.Location = new Point(266, 351);
+            comboBox1.Margin = new Padding(3, 4, 3, 4);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(117, 23);
+            comboBox1.Size = new Size(133, 28);
             comboBox1.TabIndex = 3;
             // 
             // lblMetodoDePago
             // 
             lblMetodoDePago.AutoSize = true;
-            lblMetodoDePago.Location = new Point(233, 245);
+            lblMetodoDePago.Location = new Point(266, 327);
             lblMetodoDePago.Name = "lblMetodoDePago";
-            lblMetodoDePago.Size = new Size(95, 15);
+            lblMetodoDePago.Size = new Size(122, 20);
             lblMetodoDePago.TabIndex = 4;
             lblMetodoDePago.Text = "Metodo de pago";
             // 
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(72, 263);
+            comboBox2.Location = new Point(82, 351);
+            comboBox2.Margin = new Padding(3, 4, 3, 4);
             comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(117, 23);
+            comboBox2.Size = new Size(133, 28);
             comboBox2.TabIndex = 5;
             // 
             // lblCliente
             // 
             lblCliente.AutoSize = true;
-            lblCliente.Location = new Point(72, 245);
+            lblCliente.Location = new Point(82, 327);
             lblCliente.Name = "lblCliente";
-            lblCliente.Size = new Size(44, 15);
+            lblCliente.Size = new Size(55, 20);
             lblCliente.TabIndex = 6;
             lblCliente.Text = "Cliente";
             // 
             // btnGenerarFactura
             // 
-            btnGenerarFactura.Location = new Point(233, 321);
+            btnGenerarFactura.Location = new Point(266, 428);
+            btnGenerarFactura.Margin = new Padding(3, 4, 3, 4);
             btnGenerarFactura.Name = "btnGenerarFactura";
-            btnGenerarFactura.Size = new Size(117, 30);
+            btnGenerarFactura.Size = new Size(134, 40);
             btnGenerarFactura.TabIndex = 7;
             btnGenerarFactura.Text = "Generar Factura";
             btnGenerarFactura.UseVisualStyleBackColor = true;
             // 
             // numericUpDown1
             // 
-            numericUpDown1.Location = new Point(421, 263);
+            numericUpDown1.Location = new Point(481, 351);
+            numericUpDown1.Margin = new Padding(3, 4, 3, 4);
             numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(120, 23);
+            numericUpDown1.Size = new Size(137, 27);
             numericUpDown1.TabIndex = 8;
             // 
             // dataGridView2
             // 
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(421, 66);
+            dataGridView2.Location = new Point(481, 88);
+            dataGridView2.Margin = new Padding(3, 4, 3, 4);
             dataGridView2.Name = "dataGridView2";
-            dataGridView2.Size = new Size(240, 150);
+            dataGridView2.RowHeadersWidth = 51;
+            dataGridView2.Size = new Size(274, 200);
             dataGridView2.TabIndex = 9;
             // 
             // Form4
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
             Controls.Add(dataGridView2);
             Controls.Add(numericUpDown1);
             Controls.Add(btnGenerarFactura);
@@ -142,8 +151,9 @@
             Controls.Add(btnRegistrarVenta);
             Controls.Add(lblVentas);
             Controls.Add(dataGridView1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Form4";
-            Text = "Form4";
+            Text = "Ventas";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();

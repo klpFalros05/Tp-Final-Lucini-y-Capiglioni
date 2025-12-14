@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entidades
+namespace Controladora.Dtos
 {
-    public class Vendedor
+    public class VendedorDto
     {
         public int VendedorId { get; set; }
-        public string Nombre { get; set; } = string.Empty;
-        public string Apellido { get; set; } = string.Empty;
+        public string Nombre { get; set; } = "";
+        public string Apellido { get; set; } = "";
         public int SucursalId { get; set; }
-        public Sucursal Sucursal { get; set; } = null!;
+        public string Sucursal { get; set; } = "";
     }
 }
