@@ -25,8 +25,8 @@ namespace Modelo {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-IQ1OBU3N\\SQLEXPRESS;Initial Catalog=TpFinalLuciniCapiglioni;In" +
-            "tegrated Security=True;Encrypt=False;TrustServerCertificate=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MÁXIMO\\SQLEXPRESS01;Initial Catalog=Final DAS;Integrated Security=Tru" +
+            "e;Encrypt=False;TrustServerCertificate=True")]
         public string ConexionSql {
             get {
                 return ((string)(this["ConexionSql"]));

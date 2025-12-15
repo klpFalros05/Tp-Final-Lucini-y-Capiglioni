@@ -54,46 +54,44 @@
             // 
             // dgvSucursales
             // 
+            dgvSucursales.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvSucursales.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvSucursales.Location = new Point(26, 65);
-            dgvSucursales.Margin = new Padding(3, 4, 3, 4);
+            dgvSucursales.Location = new Point(23, 49);
             dgvSucursales.Name = "dgvSucursales";
             dgvSucursales.RowHeadersWidth = 51;
-            dgvSucursales.Size = new Size(301, 232);
+            dgvSucursales.Size = new Size(263, 174);
             dgvSucursales.TabIndex = 0;
             // 
             // lblSucursales
             // 
             lblSucursales.AutoSize = true;
-            lblSucursales.Location = new Point(49, 27);
+            lblSucursales.Location = new Point(43, 20);
             lblSucursales.Name = "lblSucursales";
-            lblSucursales.Size = new Size(77, 20);
+            lblSucursales.Size = new Size(62, 15);
             lblSucursales.TabIndex = 1;
             lblSucursales.Text = "Sucursales";
             // 
             // txtNombreSucursal
             // 
-            txtNombreSucursal.Location = new Point(393, 113);
-            txtNombreSucursal.Margin = new Padding(3, 4, 3, 4);
+            txtNombreSucursal.Location = new Point(344, 85);
             txtNombreSucursal.Name = "txtNombreSucursal";
-            txtNombreSucursal.Size = new Size(114, 27);
+            txtNombreSucursal.Size = new Size(100, 23);
             txtNombreSucursal.TabIndex = 2;
             // 
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.Location = new Point(393, 89);
+            lblNombre.Location = new Point(344, 67);
             lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(64, 20);
+            lblNombre.Size = new Size(51, 15);
             lblNombre.TabIndex = 3;
             lblNombre.Text = "Nombre";
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(393, 169);
-            btnAgregar.Margin = new Padding(3, 4, 3, 4);
+            btnAgregar.Location = new Point(344, 127);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(114, 35);
+            btnAgregar.Size = new Size(100, 26);
             btnAgregar.TabIndex = 4;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
@@ -101,10 +99,9 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(393, 225);
-            btnEliminar.Margin = new Padding(3, 4, 3, 4);
+            btnEliminar.Location = new Point(344, 169);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(114, 35);
+            btnEliminar.Size = new Size(100, 26);
             btnEliminar.TabIndex = 5;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
@@ -112,83 +109,80 @@
             // 
             // dgvProductosStock
             // 
+            dgvProductosStock.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvProductosStock.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProductosStock.Location = new Point(580, 65);
-            dgvProductosStock.Margin = new Padding(3, 4, 3, 4);
+            dgvProductosStock.Location = new Point(508, 49);
             dgvProductosStock.Name = "dgvProductosStock";
             dgvProductosStock.RowHeadersWidth = 51;
-            dgvProductosStock.Size = new Size(609, 232);
+            dgvProductosStock.Size = new Size(533, 174);
             dgvProductosStock.TabIndex = 6;
             // 
             // lblStockDeProductos
             // 
             lblStockDeProductos.AutoSize = true;
-            lblStockDeProductos.Location = new Point(595, 27);
+            lblStockDeProductos.Location = new Point(521, 20);
             lblStockDeProductos.Name = "lblStockDeProductos";
-            lblStockDeProductos.Size = new Size(141, 20);
+            lblStockDeProductos.Size = new Size(112, 15);
             lblStockDeProductos.TabIndex = 7;
             lblStockDeProductos.Text = " Stock de productos";
             // 
             // dgvStockPorSucursal
             // 
+            dgvStockPorSucursal.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvStockPorSucursal.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvStockPorSucursal.Location = new Point(26, 391);
-            dgvStockPorSucursal.Margin = new Padding(3, 4, 3, 4);
+            dgvStockPorSucursal.Location = new Point(23, 293);
             dgvStockPorSucursal.Name = "dgvStockPorSucursal";
             dgvStockPorSucursal.RowHeadersWidth = 51;
-            dgvStockPorSucursal.Size = new Size(870, 241);
+            dgvStockPorSucursal.Size = new Size(761, 181);
             dgvStockPorSucursal.TabIndex = 8;
             // 
             // cmbSucursalAsignar
             // 
             cmbSucursalAsignar.FormattingEnabled = true;
-            cmbSucursalAsignar.Location = new Point(1222, 89);
-            cmbSucursalAsignar.Margin = new Padding(3, 4, 3, 4);
+            cmbSucursalAsignar.Location = new Point(1069, 67);
             cmbSucursalAsignar.Name = "cmbSucursalAsignar";
-            cmbSucursalAsignar.Size = new Size(155, 28);
+            cmbSucursalAsignar.Size = new Size(136, 23);
             cmbSucursalAsignar.TabIndex = 9;
             // 
             // lblStockPorSucursal
             // 
             lblStockPorSucursal.AutoSize = true;
-            lblStockPorSucursal.Location = new Point(49, 351);
+            lblStockPorSucursal.Location = new Point(43, 263);
             lblStockPorSucursal.Name = "lblStockPorSucursal";
-            lblStockPorSucursal.Size = new Size(128, 20);
+            lblStockPorSucursal.Size = new Size(104, 15);
             lblStockPorSucursal.TabIndex = 10;
             lblStockPorSucursal.Text = "Stock Por Sucursal";
             // 
             // nudCantidadAsignar
             // 
-            nudCantidadAsignar.Location = new Point(1223, 176);
-            nudCantidadAsignar.Margin = new Padding(3, 4, 3, 4);
+            nudCantidadAsignar.Location = new Point(1070, 132);
             nudCantidadAsignar.Name = "nudCantidadAsignar";
-            nudCantidadAsignar.Size = new Size(154, 27);
+            nudCantidadAsignar.Size = new Size(135, 23);
             nudCantidadAsignar.TabIndex = 11;
             // 
             // lblSucursal
             // 
             lblSucursal.AutoSize = true;
-            lblSucursal.Location = new Point(1222, 65);
+            lblSucursal.Location = new Point(1069, 49);
             lblSucursal.Name = "lblSucursal";
-            lblSucursal.Size = new Size(63, 20);
+            lblSucursal.Size = new Size(51, 15);
             lblSucursal.TabIndex = 12;
             lblSucursal.Text = "Sucursal";
             // 
             // lblCantidad
             // 
             lblCantidad.AutoSize = true;
-            lblCantidad.Location = new Point(1223, 148);
+            lblCantidad.Location = new Point(1070, 111);
             lblCantidad.Name = "lblCantidad";
-            lblCantidad.Size = new Size(69, 20);
+            lblCantidad.Size = new Size(55, 15);
             lblCantidad.TabIndex = 13;
             lblCantidad.Text = "Cantidad";
             // 
             // btnAgregarStockSucursal
             // 
-            btnAgregarStockSucursal.Location = new Point(1222, 225);
-            btnAgregarStockSucursal.Margin = new Padding(3, 4, 3, 4);
+            btnAgregarStockSucursal.Location = new Point(1069, 169);
             btnAgregarStockSucursal.Name = "btnAgregarStockSucursal";
-            btnAgregarStockSucursal.Size = new Size(155, 72);
+            btnAgregarStockSucursal.Size = new Size(136, 54);
             btnAgregarStockSucursal.TabIndex = 14;
             btnAgregarStockSucursal.Text = "Agregar stock a la sucursal";
             btnAgregarStockSucursal.UseVisualStyleBackColor = true;
@@ -197,27 +191,25 @@
             // cmbSucursalVer
             // 
             cmbSucursalVer.FormattingEnabled = true;
-            cmbSucursalVer.Location = new Point(933, 456);
-            cmbSucursalVer.Margin = new Padding(3, 4, 3, 4);
+            cmbSucursalVer.Location = new Point(816, 342);
             cmbSucursalVer.Name = "cmbSucursalVer";
-            cmbSucursalVer.Size = new Size(159, 28);
+            cmbSucursalVer.Size = new Size(140, 23);
             cmbSucursalVer.TabIndex = 15;
             // 
             // lblSucursalConStock
             // 
             lblSucursalConStock.AutoSize = true;
-            lblSucursalConStock.Location = new Point(933, 428);
+            lblSucursalConStock.Location = new Point(816, 321);
             lblSucursalConStock.Name = "lblSucursalConStock";
-            lblSucursalConStock.Size = new Size(63, 20);
+            lblSucursalConStock.Size = new Size(51, 15);
             lblSucursalConStock.TabIndex = 16;
             lblSucursalConStock.Text = "Sucursal";
             // 
             // btnProductosPorSucursal
             // 
-            btnProductosPorSucursal.Location = new Point(933, 504);
-            btnProductosPorSucursal.Margin = new Padding(3, 4, 3, 4);
+            btnProductosPorSucursal.Location = new Point(816, 378);
             btnProductosPorSucursal.Name = "btnProductosPorSucursal";
-            btnProductosPorSucursal.Size = new Size(160, 59);
+            btnProductosPorSucursal.Size = new Size(140, 44);
             btnProductosPorSucursal.TabIndex = 17;
             btnProductosPorSucursal.Text = "Productos Por Sucursal";
             btnProductosPorSucursal.UseVisualStyleBackColor = true;
@@ -225,9 +217,9 @@
             // 
             // Form5
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1440, 661);
+            ClientSize = new Size(1260, 496);
             Controls.Add(btnProductosPorSucursal);
             Controls.Add(lblSucursalConStock);
             Controls.Add(cmbSucursalVer);
@@ -246,7 +238,6 @@
             Controls.Add(txtNombreSucursal);
             Controls.Add(lblSucursales);
             Controls.Add(dgvSucursales);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "Form5";
             Text = "Gestion Sucursales";
             Load += Form5_Load_1;

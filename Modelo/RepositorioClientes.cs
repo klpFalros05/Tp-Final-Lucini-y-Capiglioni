@@ -10,6 +10,12 @@ namespace Modelo
 {
     public class RepositorioClientes
     {
+        private readonly ContextoVentas context;
+
+        public RepositorioClientes()
+        {
+            context = new ContextoVentas();
+        }
         public List<Cliente> ListarTodos()
         {
             using var ctx = new ContextoVentas();
@@ -52,6 +58,12 @@ namespace Modelo
             ctx.SaveChanges();
         }
 
+        public void Modificar(Cliente cliente)
+        {
+            context.Clientes.Update(cliente);
+            context.SaveChanges();
+        }
+
         public void Eliminar(int clienteId)
         {
             using var ctx = new ContextoVentas();
@@ -69,6 +81,11 @@ namespace Modelo
             {
                 throw new Exception("No se puede eliminar el cliente porque tiene ventas asociadas.");
             }
+        }
+
+        public Cliente? ObtenerPorId(int id)
+        {
+            return context.Clientes.Find(id);
         }
     }
 }

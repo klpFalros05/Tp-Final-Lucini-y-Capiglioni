@@ -135,5 +135,10 @@ namespace Controladora
                 if (string.IsNullOrWhiteSpace(apellido)) throw new Exception("El apellido es obligatorio.");
                 if (descuentoPorcentaje < 0 || descuentoPorcentaje > 100) throw new Exception("El descuento debe estar entre 0 y 100.");
             }
-        }
+
+            public Cliente? ObtenerPorId(int id)
+            {
+                return repo.ObtenerPorId(id);
+            }
+    }
 }
