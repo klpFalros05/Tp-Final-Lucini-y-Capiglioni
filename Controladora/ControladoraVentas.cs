@@ -44,6 +44,11 @@ namespace Controladora
                 // Mayorista.Descuento = 0.10m, por ejemplo
                 descuento = subtotal * may.Descuento;
             }
+            else if (cliente is Minorista min)
+            {
+                // Minorista.Descuento = 0.05m, por ejemplo
+                descuento = subtotal * min.Descuento;
+            }
 
             decimal total = subtotal - descuento;
             return (subtotal, descuento, total);
@@ -99,19 +104,20 @@ namespace Controladora
             var cliente = repoClientes.ObtenerPorId(idCliente);
             if (cliente is Mayorista may)
             {
+                // Si compra en cuenta corriente, sumamos al monto que debe
                 if (!pagaAhora)
                 {
-                    may.EstadoCuenta = EstadoDeCuenta.Debe;
-                    // may.MontoDebe += total;
-                    repoClientes.Modificar(may);
+                    may.MontoDebe += total;
                 }
-                else
-                {
-                    may.EstadoCuenta = EstadoDeCuenta.AlDia;
-                    repoClientes.Modificar(may);
-                }
-            }
 
+                // Estado de cuenta según si debe algo o no
+                may.EstadoCuenta = may.MontoDebe > 0
+                    ? EstadoDeCuenta.Debe
+                    : EstadoDeCuenta.AlDia;
+
+                // Guardamos cambios en la BD
+                repoClientes.Modificar(may);
+            }
             repoVentas.RegistrarVenta(venta);
 
             return "Venta registrada correctamente.";

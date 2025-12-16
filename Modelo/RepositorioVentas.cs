@@ -24,24 +24,44 @@ namespace Modelo
             context.SaveChanges();
         }
 
-        /// Listar ventas (sirve después para reportes)
-        public List<Venta> Listar(DateTime? desde = null, DateTime? hasta = null)
+        public List<Venta> ListarFiltrado(DateTime? desde,DateTime? hasta, int? sucursalId,int? clienteId,int? vendedorId,MetodoPago? metodoPago)
         {
             var query = context.Ventas
-                               .Include(v => v.Cliente)
                                .Include(v => v.Sucursal)
+                               .Include(v => v.Cliente)
                                .Include(v => v.Vendedor)
                                .Include(v => v.Detalles)
                                    .ThenInclude(d => d.Producto)
                                .AsQueryable();
 
             if (desde.HasValue)
-                query = query.Where(v => v.Fecha >= desde.Value);
+            {
+                var inicio = desde.Value.Date;
+                query = query.Where(v => v.Fecha >= inicio);
+            }
 
             if (hasta.HasValue)
-                query = query.Where(v => v.Fecha <= hasta.Value);
+            {
+                // hasta el final del día seleccionado
+                var fin = hasta.Value.Date.AddDays(1).AddTicks(-1);
+                query = query.Where(v => v.Fecha <= fin);
+            }
 
-            return query.ToList();
+            if (sucursalId.HasValue)
+                query = query.Where(v => v.SucursalId == sucursalId.Value);
+
+            if (clienteId.HasValue)
+                query = query.Where(v => v.ClienteId == clienteId.Value);
+
+            if (vendedorId.HasValue)
+                query = query.Where(v => v.VendedorId == vendedorId.Value);
+
+            if (metodoPago.HasValue)
+                query = query.Where(v => v.MetodoPago == metodoPago.Value);
+
+            return query
+                    .OrderBy(v => v.Fecha)
+                    .ToList();
         }
 
         public Venta? ObtenerPorId(int id)
