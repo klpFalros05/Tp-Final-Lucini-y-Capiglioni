@@ -87,5 +87,13 @@ namespace Modelo
         {
             return context.Clientes.Find(id);
         }
+
+        public decimal ObtenerTotalCuentaCorriente()
+        {
+            return context.Clientes
+                          .OfType<Mayorista>()   // solo mayoristas
+                          .Sum(m => m.MontoDebe);
+        }
+
     }
 }
