@@ -48,12 +48,12 @@
             // 
             // dgvVendedores
             // 
+            dgvVendedores.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvVendedores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvVendedores.Location = new Point(36, 75);
-            dgvVendedores.Margin = new Padding(3, 4, 3, 4);
+            dgvVendedores.Location = new Point(32, 56);
             dgvVendedores.Name = "dgvVendedores";
             dgvVendedores.RowHeadersWidth = 51;
-            dgvVendedores.Size = new Size(426, 369);
+            dgvVendedores.Size = new Size(373, 277);
             dgvVendedores.TabIndex = 0;
             dgvVendedores.CellClick += dgvVendedores_CellClick;
             dgvVendedores.CellContentClick += dgvVendedores_CellContentClick;
@@ -61,52 +61,49 @@
             // lblVendedores
             // 
             lblVendedores.AutoSize = true;
-            lblVendedores.Location = new Point(36, 41);
+            lblVendedores.Location = new Point(32, 31);
             lblVendedores.Name = "lblVendedores";
-            lblVendedores.Size = new Size(87, 20);
+            lblVendedores.Size = new Size(68, 15);
             lblVendedores.TabIndex = 1;
             lblVendedores.Text = "Vendedores";
             // 
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.Location = new Point(531, 69);
+            lblNombre.Location = new Point(465, 52);
             lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(64, 20);
+            lblNombre.Size = new Size(51, 15);
             lblNombre.TabIndex = 2;
             lblNombre.Text = "Nombre";
             // 
             // lblApellido
             // 
             lblApellido.AutoSize = true;
-            lblApellido.Location = new Point(531, 156);
+            lblApellido.Location = new Point(465, 117);
             lblApellido.Name = "lblApellido";
-            lblApellido.Size = new Size(66, 20);
+            lblApellido.Size = new Size(51, 15);
             lblApellido.TabIndex = 3;
             lblApellido.Text = "Apellido";
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(531, 93);
-            txtNombre.Margin = new Padding(3, 4, 3, 4);
+            txtNombre.Location = new Point(465, 70);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(114, 27);
+            txtNombre.Size = new Size(100, 23);
             txtNombre.TabIndex = 4;
             // 
             // txtApellido
             // 
-            txtApellido.Location = new Point(531, 180);
-            txtApellido.Margin = new Padding(3, 4, 3, 4);
+            txtApellido.Location = new Point(465, 135);
             txtApellido.Name = "txtApellido";
-            txtApellido.Size = new Size(114, 27);
+            txtApellido.Size = new Size(100, 23);
             txtApellido.TabIndex = 5;
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(723, 88);
-            btnAgregar.Margin = new Padding(3, 4, 3, 4);
+            btnAgregar.Location = new Point(633, 66);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(114, 39);
+            btnAgregar.Size = new Size(100, 29);
             btnAgregar.TabIndex = 6;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
@@ -114,10 +111,9 @@
             // 
             // btnModificar
             // 
-            btnModificar.Location = new Point(723, 175);
-            btnModificar.Margin = new Padding(3, 4, 3, 4);
+            btnModificar.Location = new Point(633, 131);
             btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(114, 39);
+            btnModificar.Size = new Size(100, 29);
             btnModificar.TabIndex = 7;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = true;
@@ -125,10 +121,9 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(723, 259);
-            btnEliminar.Margin = new Padding(3, 4, 3, 4);
+            btnEliminar.Location = new Point(633, 194);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(114, 39);
+            btnEliminar.Size = new Size(100, 29);
             btnEliminar.TabIndex = 8;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
@@ -137,35 +132,34 @@
             // cbSucursal
             // 
             cbSucursal.FormattingEnabled = true;
-            cbSucursal.Location = new Point(531, 267);
-            cbSucursal.Margin = new Padding(3, 4, 3, 4);
+            cbSucursal.Location = new Point(465, 200);
             cbSucursal.Name = "cbSucursal";
-            cbSucursal.Size = new Size(138, 28);
+            cbSucursal.Size = new Size(121, 23);
             cbSucursal.TabIndex = 9;
             // 
             // lblSucursal
             // 
             lblSucursal.AutoSize = true;
-            lblSucursal.Location = new Point(531, 243);
+            lblSucursal.Location = new Point(465, 182);
             lblSucursal.Name = "lblSucursal";
-            lblSucursal.Size = new Size(63, 20);
+            lblSucursal.Size = new Size(51, 15);
             lblSucursal.TabIndex = 10;
             lblSucursal.Text = "Sucursal";
             // 
             // cbSucursalesFiltro
             // 
             cbSucursalesFiltro.FormattingEnabled = true;
-            cbSucursalesFiltro.Location = new Point(531, 344);
+            cbSucursalesFiltro.Location = new Point(465, 258);
+            cbSucursalesFiltro.Margin = new Padding(3, 2, 3, 2);
             cbSucursalesFiltro.Name = "cbSucursalesFiltro";
-            cbSucursalesFiltro.Size = new Size(138, 28);
+            cbSucursalesFiltro.Size = new Size(121, 23);
             cbSucursalesFiltro.TabIndex = 11;
             // 
             // btnMostrarXsucursal
             // 
-            btnMostrarXsucursal.Location = new Point(723, 332);
-            btnMostrarXsucursal.Margin = new Padding(3, 4, 3, 4);
+            btnMostrarXsucursal.Location = new Point(633, 249);
             btnMostrarXsucursal.Name = "btnMostrarXsucursal";
-            btnMostrarXsucursal.Size = new Size(114, 50);
+            btnMostrarXsucursal.Size = new Size(100, 38);
             btnMostrarXsucursal.TabIndex = 12;
             btnMostrarXsucursal.Text = "Mostrar Por Sucursal";
             btnMostrarXsucursal.UseVisualStyleBackColor = true;
@@ -174,18 +168,17 @@
             // lblFScursales
             // 
             lblFScursales.AutoSize = true;
-            lblFScursales.Location = new Point(534, 321);
+            lblFScursales.Location = new Point(467, 241);
             lblFScursales.Name = "lblFScursales";
-            lblFScursales.Size = new Size(104, 20);
+            lblFScursales.Size = new Size(84, 15);
             lblFScursales.TabIndex = 13;
             lblFScursales.Text = "Filtro Sucursal:";
             // 
             // btnMostrarTodos
             // 
-            btnMostrarTodos.Location = new Point(723, 405);
-            btnMostrarTodos.Margin = new Padding(3, 4, 3, 4);
+            btnMostrarTodos.Location = new Point(633, 304);
             btnMostrarTodos.Name = "btnMostrarTodos";
-            btnMostrarTodos.Size = new Size(114, 39);
+            btnMostrarTodos.Size = new Size(100, 29);
             btnMostrarTodos.TabIndex = 14;
             btnMostrarTodos.Text = "Mostrar todos";
             btnMostrarTodos.UseVisualStyleBackColor = true;
@@ -193,9 +186,9 @@
             // 
             // Form6
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(916, 508);
+            ClientSize = new Size(802, 381);
             Controls.Add(btnMostrarTodos);
             Controls.Add(lblFScursales);
             Controls.Add(btnMostrarXsucursal);
@@ -211,7 +204,6 @@
             Controls.Add(lblNombre);
             Controls.Add(lblVendedores);
             Controls.Add(dgvVendedores);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "Form6";
             Text = "Registrar Vendedores";
             Load += Form6_Load;

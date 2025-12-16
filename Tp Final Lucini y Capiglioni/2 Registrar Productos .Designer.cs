@@ -129,6 +129,7 @@
             // 
             // dgvProductos
             // 
+            dgvProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvProductos.Location = new Point(31, 47);
             dgvProductos.Margin = new Padding(3, 4, 3, 4);
@@ -184,6 +185,7 @@
             // 
             nudPrecio.Location = new Point(305, 424);
             nudPrecio.Margin = new Padding(3, 4, 3, 4);
+            nudPrecio.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             nudPrecio.Name = "nudPrecio";
             nudPrecio.Size = new Size(114, 27);
             nudPrecio.TabIndex = 17;
@@ -192,6 +194,7 @@
             // 
             nudCantidad.Location = new Point(736, 423);
             nudCantidad.Margin = new Padding(3, 4, 3, 4);
+            nudCantidad.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             nudCantidad.Name = "nudCantidad";
             nudCantidad.Size = new Size(114, 27);
             nudCantidad.TabIndex = 19;

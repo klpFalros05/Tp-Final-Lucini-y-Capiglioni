@@ -54,6 +54,7 @@
             // 
             // dgvSucursales
             // 
+            dgvSucursales.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvSucursales.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvSucursales.Location = new Point(26, 65);
             dgvSucursales.Margin = new Padding(3, 4, 3, 4);
@@ -112,8 +113,9 @@
             // 
             // dgvProductosStock
             // 
+            dgvProductosStock.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvProductosStock.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProductosStock.Location = new Point(580, 65);
+            dgvProductosStock.Location = new Point(581, 65);
             dgvProductosStock.Margin = new Padding(3, 4, 3, 4);
             dgvProductosStock.Name = "dgvProductosStock";
             dgvProductosStock.RowHeadersWidth = 51;
@@ -131,6 +133,7 @@
             // 
             // dgvStockPorSucursal
             // 
+            dgvStockPorSucursal.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvStockPorSucursal.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvStockPorSucursal.Location = new Point(26, 391);
             dgvStockPorSucursal.Margin = new Padding(3, 4, 3, 4);
@@ -161,6 +164,7 @@
             // 
             nudCantidadAsignar.Location = new Point(1223, 176);
             nudCantidadAsignar.Margin = new Padding(3, 4, 3, 4);
+            nudCantidadAsignar.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             nudCantidadAsignar.Name = "nudCantidadAsignar";
             nudCantidadAsignar.Size = new Size(154, 27);
             nudCantidadAsignar.TabIndex = 11;

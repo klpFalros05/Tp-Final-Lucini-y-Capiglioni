@@ -57,5 +57,11 @@ namespace Modelo
 
             context.SaveChanges();
         }
+
+        public void Actualizar(Stock stock)
+        {
+            context.Stocks.Update(stock);
+            context.SaveChanges();
+        }
     }
 }

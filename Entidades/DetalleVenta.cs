@@ -15,5 +15,8 @@ namespace Entidades
         public Producto Producto { get; set; } = null!;
         public int Cantidad { get; set; }
         public decimal Subtotal { get; set; }
+
+        //(solo lectura, EF no la mapea a la BD)
+        public string NombreProducto => Producto?.Nombre ?? string.Empty;
     }
 }
