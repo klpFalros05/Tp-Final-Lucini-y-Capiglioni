@@ -104,19 +104,20 @@ namespace Controladora
             var cliente = repoClientes.ObtenerPorId(idCliente);
             if (cliente is Mayorista may)
             {
+                // Si compra en cuenta corriente, sumamos al monto que debe
                 if (!pagaAhora)
                 {
-                    may.EstadoCuenta = EstadoDeCuenta.Debe;
-                    // may.MontoDebe += total;
-                    repoClientes.Modificar(may);
+                    may.MontoDebe += total;
                 }
-                else
-                {
-                    may.EstadoCuenta = EstadoDeCuenta.AlDia;
-                    repoClientes.Modificar(may);
-                }
-            }
 
+                // Estado de cuenta según si debe algo o no
+                may.EstadoCuenta = may.MontoDebe > 0
+                    ? EstadoDeCuenta.Debe
+                    : EstadoDeCuenta.AlDia;
+
+                // Guardamos cambios en la BD
+                repoClientes.Modificar(may);
+            }
             repoVentas.RegistrarVenta(venta);
 
             return "Venta registrada correctamente.";
