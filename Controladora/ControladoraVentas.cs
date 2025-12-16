@@ -44,6 +44,11 @@ namespace Controladora
                 // Mayorista.Descuento = 0.10m, por ejemplo
                 descuento = subtotal * may.Descuento;
             }
+            else if (cliente is Minorista min)
+            {
+                // Minorista.Descuento = 0.05m, por ejemplo
+                descuento = subtotal * min.Descuento;
+            }
 
             decimal total = subtotal - descuento;
             return (subtotal, descuento, total);

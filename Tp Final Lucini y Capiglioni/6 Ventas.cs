@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Tp_Final_Lucini_y_Capiglioni
 {
@@ -39,7 +40,7 @@ namespace Tp_Final_Lucini_y_Capiglioni
 
             cmbCliente_SelectedIndexChanged_1(null, EventArgs.Empty);
         }
-        
+
         //Cargar DataGrids
         private void CargaDGV()
         {
@@ -433,5 +434,115 @@ namespace Tp_Final_Lucini_y_Capiglioni
             }
         }
 
+        private void btnGenerarFactura_Click(object sender, EventArgs e)
+        {
+            if (carrito.Count == 0)
+            {
+                MessageBox.Show("No hay productos en el carrito para generar la factura.",
+                                "Atención",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (cmbSucursal.SelectedItem == null ||
+                cmbCliente.SelectedValue == null ||
+                cmbVendedor.SelectedValue == null ||
+                cmbMetodoDePago.SelectedItem == null)
+            {
+                MessageBox.Show("Complete los datos de la venta antes de generar la factura.",
+                                "Atención",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+                return;
+            }
+
+            // 2) Datos generales
+            var sucursal = (Sucursal)cmbSucursal.SelectedItem;
+            string nombreSucursal = sucursal.NombreSucursal;
+
+            string nombreCliente = cmbCliente.Text;    // lo que se muestra en el combo
+            string nombreVendedor = cmbVendedor.Text;  // idem
+            var metodoPago = (MetodoPago)cmbMetodoDePago.SelectedItem;
+            DateTime fecha = dtpFecha.Value;
+
+            int idCliente = (int)cmbCliente.SelectedValue;
+
+            // 3) Recalcular totales con la controladora (usa descuentos, etc.)
+            var totales = ControladoraVentas.Instancia
+                            .CalcularTotales(idCliente, carrito.ToList());
+
+            // porcentaje de descuento = (monto desc / subtotal) * 100
+            decimal porcentajeDesc = 0m;
+            if (totales.Subtotal > 0)
+                porcentajeDesc = (totales.Descuento / totales.Subtotal) * 100m;
+
+            // 4) Construir el texto de la factura
+            var sb = new StringBuilder();
+
+            sb.AppendLine("************* FACTURA *************");
+            sb.AppendLine($"Fecha:    {fecha:dd/MM/yyyy HH:mm}");
+            sb.AppendLine($"Sucursal: {nombreSucursal}");
+            sb.AppendLine($"Cliente:  {nombreCliente}");
+            sb.AppendLine($"Vendedor: {nombreVendedor}");
+            sb.AppendLine($"Pago:     {metodoPago}");
+            sb.AppendLine("-----------------------------------");
+            sb.AppendLine("Cant  Producto           P.Unit  Subtotal");
+
+            foreach (var det in carrito)
+            {
+                string nom = det.Producto?.Nombre ?? "";
+                decimal precioUnit = det.Producto?.Precio ?? 0m;
+
+                sb.AppendLine(
+                    $"{det.Cantidad,4}  " +
+                    $"{nom,-15} " +
+                    $"{precioUnit,7:N2}  " +
+                    $"{det.Subtotal,8:N2}"
+                );
+            }
+
+            sb.AppendLine("-----------------------------------");
+            sb.AppendLine($"Subtotal:       {totales.Subtotal:N2}");
+            sb.AppendLine($"Descuento ({porcentajeDesc:N0}%): {totales.Descuento:N2}");
+            sb.AppendLine($"TOTAL:          {totales.Total:N2}");
+            sb.AppendLine("***********************************");
+
+            string textoFactura = sb.ToString();
+
+            // 5) Mostrarla
+            MessageBox.Show(sb.ToString(),
+                            "Factura",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+            var respuesta = MessageBox.Show("¿Desea guardar la factura como archivo de texto?",
+                                   "Guardar factura",
+                                   MessageBoxButtons.YesNo,
+                                   MessageBoxIcon.Question);
+
+            if (respuesta == DialogResult.Yes)
+            {
+                using (var dialog = new SaveFileDialog())
+                {
+                    dialog.Title = "Guardar factura";
+                    dialog.Filter = "Archivo de texto (*.txt)|*.txt";
+                    dialog.FileName = $"Factura_{DateTime.Now:yyyyMMdd_HHmmss}.txt";
+                    dialog.InitialDirectory = Environment.GetFolderPath(
+                                                Environment.SpecialFolder.MyDocuments);
+
+                    if (dialog.ShowDialog() == DialogResult.OK)
+                    {
+                        // Guardar el archivo
+                        File.WriteAllText(dialog.FileName, textoFactura, Encoding.UTF8);
+
+                        MessageBox.Show("Factura guardada en:\n" + dialog.FileName,
+                                        "Factura guardada",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information);
+                    }
+
+                }
+            }
+        }
     }
 }
