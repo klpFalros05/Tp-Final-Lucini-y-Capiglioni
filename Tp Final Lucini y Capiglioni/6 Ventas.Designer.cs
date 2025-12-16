@@ -214,6 +214,7 @@
             // 
             nudCantidad.Location = new Point(239, 517);
             nudCantidad.Margin = new Padding(3, 4, 3, 4);
+            nudCantidad.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             nudCantidad.Name = "nudCantidad";
             nudCantidad.Size = new Size(134, 27);
             nudCantidad.TabIndex = 18;
@@ -328,6 +329,7 @@
             txtNombre.Location = new Point(243, 432);
             txtNombre.Margin = new Padding(3, 4, 3, 4);
             txtNombre.Name = "txtNombre";
+            txtNombre.ReadOnly = true;
             txtNombre.Size = new Size(114, 27);
             txtNombre.TabIndex = 32;
             // 
@@ -354,6 +356,7 @@
             txtPrecioUnitario.Location = new Point(387, 432);
             txtPrecioUnitario.Margin = new Padding(3, 4, 3, 4);
             txtPrecioUnitario.Name = "txtPrecioUnitario";
+            txtPrecioUnitario.ReadOnly = true;
             txtPrecioUnitario.Size = new Size(114, 27);
             txtPrecioUnitario.TabIndex = 34;
             // 
