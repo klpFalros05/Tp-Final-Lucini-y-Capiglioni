@@ -46,6 +46,10 @@
             btnGenerar = new Button();
             btnLimpiar = new Button();
             gpbTotales = new GroupBox();
+            label10 = new Label();
+            txtCantidadProductoMasVendido = new TextBox();
+            txtProductoMasVendido = new TextBox();
+            label7 = new Label();
             txtTotalProductos = new TextBox();
             txtTotalCuentaCorriente = new TextBox();
             txtTotalFacturado = new TextBox();
@@ -54,6 +58,8 @@
             label11 = new Label();
             label9 = new Label();
             label8 = new Label();
+            label6 = new Label();
+            cmbProducto = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dgvResultados).BeginInit();
             gpbTotales.SuspendLayout();
             SuspendLayout();
@@ -216,6 +222,10 @@
             // 
             // gpbTotales
             // 
+            gpbTotales.Controls.Add(label10);
+            gpbTotales.Controls.Add(txtCantidadProductoMasVendido);
+            gpbTotales.Controls.Add(txtProductoMasVendido);
+            gpbTotales.Controls.Add(label7);
             gpbTotales.Controls.Add(txtTotalProductos);
             gpbTotales.Controls.Add(txtTotalCuentaCorriente);
             gpbTotales.Controls.Add(txtTotalFacturado);
@@ -226,14 +236,50 @@
             gpbTotales.Controls.Add(label8);
             gpbTotales.Location = new Point(800, 205);
             gpbTotales.Name = "gpbTotales";
-            gpbTotales.Size = new Size(371, 267);
+            gpbTotales.Size = new Size(405, 312);
             gpbTotales.TabIndex = 18;
             gpbTotales.TabStop = false;
             gpbTotales.Text = "Totales";
             // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(33, 261);
+            label10.Name = "label10";
+            label10.Size = new Size(195, 20);
+            label10.TabIndex = 23;
+            label10.Text = "Cant. Producto Mas vendido";
+            // 
+            // txtCantidadProductoMasVendido
+            // 
+            txtCantidadProductoMasVendido.Location = new Point(236, 258);
+            txtCantidadProductoMasVendido.Name = "txtCantidadProductoMasVendido";
+            txtCantidadProductoMasVendido.ReadOnly = true;
+            txtCantidadProductoMasVendido.Size = new Size(125, 27);
+            txtCantidadProductoMasVendido.TabIndex = 22;
+            txtCantidadProductoMasVendido.TextAlign = HorizontalAlignment.Right;
+            // 
+            // txtProductoMasVendido
+            // 
+            txtProductoMasVendido.Location = new Point(235, 212);
+            txtProductoMasVendido.Name = "txtProductoMasVendido";
+            txtProductoMasVendido.ReadOnly = true;
+            txtProductoMasVendido.Size = new Size(125, 27);
+            txtProductoMasVendido.TabIndex = 21;
+            txtProductoMasVendido.TextAlign = HorizontalAlignment.Right;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(30, 215);
+            label7.Name = "label7";
+            label7.Size = new Size(161, 20);
+            label7.TabIndex = 20;
+            label7.Text = "Producto mas vendido:";
+            // 
             // txtTotalProductos
             // 
-            txtTotalProductos.Location = new Point(195, 163);
+            txtTotalProductos.Location = new Point(235, 167);
             txtTotalProductos.Name = "txtTotalProductos";
             txtTotalProductos.ReadOnly = true;
             txtTotalProductos.Size = new Size(125, 27);
@@ -242,7 +288,7 @@
             // 
             // txtTotalCuentaCorriente
             // 
-            txtTotalCuentaCorriente.Location = new Point(194, 124);
+            txtTotalCuentaCorriente.Location = new Point(235, 128);
             txtTotalCuentaCorriente.Name = "txtTotalCuentaCorriente";
             txtTotalCuentaCorriente.ReadOnly = true;
             txtTotalCuentaCorriente.Size = new Size(125, 27);
@@ -251,7 +297,7 @@
             // 
             // txtTotalFacturado
             // 
-            txtTotalFacturado.Location = new Point(195, 77);
+            txtTotalFacturado.Location = new Point(236, 81);
             txtTotalFacturado.Name = "txtTotalFacturado";
             txtTotalFacturado.ReadOnly = true;
             txtTotalFacturado.Size = new Size(125, 27);
@@ -260,7 +306,7 @@
             // 
             // txtCantVentas
             // 
-            txtCantVentas.Location = new Point(195, 39);
+            txtCantVentas.Location = new Point(236, 43);
             txtCantVentas.Name = "txtCantVentas";
             txtCantVentas.ReadOnly = true;
             txtCantVentas.Size = new Size(125, 27);
@@ -272,9 +318,9 @@
             label5.AutoSize = true;
             label5.Location = new Point(28, 166);
             label5.Name = "label5";
-            label5.Size = new Size(140, 20);
+            label5.Size = new Size(143, 20);
             label5.TabIndex = 8;
-            label5.Text = "Productos Vendidos";
+            label5.Text = "Productos Vendidos:";
             // 
             // label11
             // 
@@ -303,11 +349,30 @@
             label8.TabIndex = 4;
             label8.Text = "Cantidad de Ventas:";
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(545, 47);
+            label6.Name = "label6";
+            label6.Size = new Size(72, 20);
+            label6.TabIndex = 19;
+            label6.Text = "Producto:";
+            // 
+            // cmbProducto
+            // 
+            cmbProducto.FormattingEnabled = true;
+            cmbProducto.Location = new Point(627, 44);
+            cmbProducto.Name = "cmbProducto";
+            cmbProducto.Size = new Size(151, 28);
+            cmbProducto.TabIndex = 20;
+            // 
             // Form7
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1208, 523);
+            ClientSize = new Size(1266, 547);
+            Controls.Add(cmbProducto);
+            Controls.Add(label6);
             Controls.Add(gpbTotales);
             Controls.Add(btnLimpiar);
             Controls.Add(btnGenerar);
@@ -365,5 +430,11 @@
         private TextBox txtTotalCuentaCorriente;
         private TextBox txtTotalFacturado;
         private TextBox txtCantVentas;
+        private Label label10;
+        private TextBox txtCantidadProductoMasVendido;
+        private TextBox txtProductoMasVendido;
+        private Label label7;
+        private Label label6;
+        private ComboBox cmbProducto;
     }
 }
