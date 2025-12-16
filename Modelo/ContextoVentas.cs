@@ -8,7 +8,7 @@ namespace Modelo
     {
 
         //private string cadenaLapa = "Data Source=LAPTOP-IQ1OBU3N\SQLEXPRESS;Initial Catalog=TpFinalLuciniCapiglioni;Integrated Security=True;Encrypt=False;TrustServerCertificate=True";
-        //private string cadenaCapi = "Data Source=MÁXIMO\\SQLEXPRESS01;Initial Catalog=\"Final DAS\";Integrated Security=True;Persist Security Info=False;Pooling=False;Encrypt=False";
+        //private string cadenaCapi = "Data Source=MÁXIMO\SQLEXPRESS01;Initial Catalog=Final DAS;Integrated Security=True;Encrypt=False;TrustServerCertificate=True";
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Minorista> Minoristas { get; set; }
         public DbSet<Mayorista> Mayoristas { get; set; }

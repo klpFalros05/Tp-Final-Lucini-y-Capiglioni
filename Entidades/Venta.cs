@@ -12,7 +12,7 @@ namespace Entidades
         public DateTime Fecha { get; set; }
         public decimal Total { get; set; }
         public MetodoPago MetodoPago { get; set; }
-        public int IdCliente { get; set; }
+        public int ClienteId { get; set; }
         public Cliente Cliente { get; set; } = null!;
         public int SucursalId { get; set; }
         public Sucursal Sucursal { get; set; } = null!;

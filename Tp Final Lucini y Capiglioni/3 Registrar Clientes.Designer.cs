@@ -53,45 +53,43 @@
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.Location = new Point(41, 424);
+            lblNombre.Location = new Point(36, 318);
             lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(64, 20);
+            lblNombre.Size = new Size(51, 15);
             lblNombre.TabIndex = 0;
             lblNombre.Text = "Nombre";
             // 
             // lblApellido
             // 
             lblApellido.AutoSize = true;
-            lblApellido.Location = new Point(195, 424);
+            lblApellido.Location = new Point(171, 318);
             lblApellido.Name = "lblApellido";
-            lblApellido.Size = new Size(66, 20);
+            lblApellido.Size = new Size(51, 15);
             lblApellido.TabIndex = 1;
             lblApellido.Text = "Apellido";
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(41, 448);
-            txtNombre.Margin = new Padding(3, 4, 3, 4);
+            txtNombre.Location = new Point(36, 336);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(114, 27);
+            txtNombre.Size = new Size(100, 23);
             txtNombre.TabIndex = 2;
             // 
             // txtApellido
             // 
-            txtApellido.Location = new Point(195, 448);
-            txtApellido.Margin = new Padding(3, 4, 3, 4);
+            txtApellido.Location = new Point(171, 336);
             txtApellido.Name = "txtApellido";
-            txtApellido.Size = new Size(114, 27);
+            txtApellido.Size = new Size(100, 23);
             txtApellido.TabIndex = 3;
             // 
             // dgvClientes
             // 
+            dgvClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvClientes.Location = new Point(26, 61);
-            dgvClientes.Margin = new Padding(3, 4, 3, 4);
+            dgvClientes.Location = new Point(23, 46);
             dgvClientes.Name = "dgvClientes";
             dgvClientes.RowHeadersWidth = 51;
-            dgvClientes.Size = new Size(794, 311);
+            dgvClientes.Size = new Size(695, 233);
             dgvClientes.TabIndex = 4;
             dgvClientes.CellClick += dgvClientes_CellClick;
             dgvClientes.Click += dgvClientes_Click;
@@ -99,18 +97,17 @@
             // lblClientes
             // 
             lblClientes.AutoSize = true;
-            lblClientes.Location = new Point(41, 24);
+            lblClientes.Location = new Point(36, 18);
             lblClientes.Name = "lblClientes";
-            lblClientes.Size = new Size(61, 20);
+            lblClientes.Size = new Size(49, 15);
             lblClientes.TabIndex = 5;
             lblClientes.Text = "Clientes";
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(41, 519);
-            btnAgregar.Margin = new Padding(3, 4, 3, 4);
+            btnAgregar.Location = new Point(36, 389);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(114, 40);
+            btnAgregar.Size = new Size(100, 30);
             btnAgregar.TabIndex = 6;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
@@ -118,10 +115,9 @@
             // 
             // btnModificar
             // 
-            btnModificar.Location = new Point(195, 519);
-            btnModificar.Margin = new Padding(3, 4, 3, 4);
+            btnModificar.Location = new Point(171, 389);
             btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(114, 40);
+            btnModificar.Size = new Size(100, 30);
             btnModificar.TabIndex = 7;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = true;
@@ -129,10 +125,9 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(344, 519);
-            btnEliminar.Margin = new Padding(3, 4, 3, 4);
+            btnEliminar.Location = new Point(301, 389);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(114, 40);
+            btnEliminar.Size = new Size(100, 30);
             btnEliminar.TabIndex = 8;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
@@ -141,45 +136,42 @@
             // lblTipoDeCliente
             // 
             lblTipoDeCliente.AutoSize = true;
-            lblTipoDeCliente.Location = new Point(344, 422);
+            lblTipoDeCliente.Location = new Point(301, 316);
             lblTipoDeCliente.Name = "lblTipoDeCliente";
-            lblTipoDeCliente.Size = new Size(108, 20);
+            lblTipoDeCliente.Size = new Size(85, 15);
             lblTipoDeCliente.TabIndex = 9;
             lblTipoDeCliente.Text = "Tipo de cliente";
             // 
             // cbTipoDeCliente
             // 
             cbTipoDeCliente.FormattingEnabled = true;
-            cbTipoDeCliente.Location = new Point(344, 448);
-            cbTipoDeCliente.Margin = new Padding(3, 4, 3, 4);
+            cbTipoDeCliente.Location = new Point(301, 336);
             cbTipoDeCliente.Name = "cbTipoDeCliente";
-            cbTipoDeCliente.Size = new Size(114, 28);
+            cbTipoDeCliente.Size = new Size(100, 23);
             cbTipoDeCliente.TabIndex = 10;
             cbTipoDeCliente.SelectedIndexChanged += cbTipoDeCliente_SelectedIndexChanged;
             // 
             // nudDescuento
             // 
-            nudDescuento.Location = new Point(499, 448);
-            nudDescuento.Margin = new Padding(3, 4, 3, 4);
+            nudDescuento.Location = new Point(437, 336);
             nudDescuento.Name = "nudDescuento";
-            nudDescuento.Size = new Size(114, 27);
+            nudDescuento.Size = new Size(100, 23);
             nudDescuento.TabIndex = 11;
             // 
             // lblDescuento
             // 
             lblDescuento.AutoSize = true;
-            lblDescuento.Location = new Point(499, 422);
+            lblDescuento.Location = new Point(437, 316);
             lblDescuento.Name = "lblDescuento";
-            lblDescuento.Size = new Size(79, 20);
+            lblDescuento.Size = new Size(63, 15);
             lblDescuento.TabIndex = 12;
             lblDescuento.Text = "Descuento";
             // 
             // btnMayoristas
             // 
-            btnMayoristas.Location = new Point(630, 519);
-            btnMayoristas.Margin = new Padding(3, 4, 3, 4);
+            btnMayoristas.Location = new Point(551, 389);
             btnMayoristas.Name = "btnMayoristas";
-            btnMayoristas.Size = new Size(114, 40);
+            btnMayoristas.Size = new Size(100, 30);
             btnMayoristas.TabIndex = 13;
             btnMayoristas.Text = "Mayoristas";
             btnMayoristas.UseVisualStyleBackColor = true;
@@ -187,10 +179,9 @@
             // 
             // btnMinoristas
             // 
-            btnMinoristas.Location = new Point(765, 519);
-            btnMinoristas.Margin = new Padding(3, 4, 3, 4);
+            btnMinoristas.Location = new Point(669, 389);
             btnMinoristas.Name = "btnMinoristas";
-            btnMinoristas.Size = new Size(114, 40);
+            btnMinoristas.Size = new Size(100, 30);
             btnMinoristas.TabIndex = 14;
             btnMinoristas.Text = "Minoristas";
             btnMinoristas.UseVisualStyleBackColor = true;
@@ -198,10 +189,9 @@
             // 
             // btnTodosClientes
             // 
-            btnTodosClientes.Location = new Point(499, 519);
-            btnTodosClientes.Margin = new Padding(3, 4, 3, 4);
+            btnTodosClientes.Location = new Point(437, 389);
             btnTodosClientes.Name = "btnTodosClientes";
-            btnTodosClientes.Size = new Size(114, 40);
+            btnTodosClientes.Size = new Size(100, 30);
             btnTodosClientes.TabIndex = 15;
             btnTodosClientes.Text = "Todos";
             btnTodosClientes.UseVisualStyleBackColor = true;
@@ -210,26 +200,27 @@
             // lblDebe
             // 
             lblDebe.AutoSize = true;
-            lblDebe.Location = new Point(641, 450);
+            lblDebe.Location = new Point(561, 338);
             lblDebe.Name = "lblDebe";
-            lblDebe.Size = new Size(48, 20);
+            lblDebe.Size = new Size(37, 15);
             lblDebe.TabIndex = 16;
             lblDebe.Text = "Debe:";
             // 
             // txtMontoDebe
             // 
-            txtMontoDebe.Location = new Point(695, 447);
+            txtMontoDebe.Location = new Point(608, 335);
+            txtMontoDebe.Margin = new Padding(3, 2, 3, 2);
             txtMontoDebe.Name = "txtMontoDebe";
             txtMontoDebe.ReadOnly = true;
-            txtMontoDebe.Size = new Size(125, 27);
+            txtMontoDebe.Size = new Size(110, 23);
             txtMontoDebe.TabIndex = 17;
             txtMontoDebe.TabStop = false;
             // 
             // Form3
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(925, 600);
+            ClientSize = new Size(809, 450);
             Controls.Add(txtMontoDebe);
             Controls.Add(lblDebe);
             Controls.Add(btnTodosClientes);
@@ -248,7 +239,6 @@
             Controls.Add(txtNombre);
             Controls.Add(lblApellido);
             Controls.Add(lblNombre);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "Form3";
             Text = "Registrar Clientes";
             Load += Form3_Load_1;
