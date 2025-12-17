@@ -18,7 +18,6 @@ namespace Entidades
         public Sucursal Sucursal { get; set; } = null!;
         public int VendedorId { get; set; }
         public Vendedor Vendedor { get; set; } = null!;
-
         public List<DetalleVenta> Detalles { get; set; } = new();
     }
     public enum MetodoPago

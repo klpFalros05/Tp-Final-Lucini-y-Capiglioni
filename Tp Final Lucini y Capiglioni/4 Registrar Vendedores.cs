@@ -59,12 +59,9 @@ namespace Tp_Final_Lucini_y_Capiglioni
             if (dgvVendedores.Columns["VendedorId"] != null)
                 dgvVendedores.Columns["VendedorId"].Visible = false;
 
-            // si querés ocultar el id de sucursal y mostrar el nombre:
             if (dgvVendedores.Columns["SucursalId"] != null)
                 dgvVendedores.Columns["SucursalId"].Visible = false;
 
-            // Asegurate de que se vea SucursalNombre
-            // dgvVendedores.Columns["SucursalNombre"].HeaderText = "Sucursal";
         }
 
         private void LimpiarCampos()
@@ -203,7 +200,7 @@ namespace Tp_Final_Lucini_y_Capiglioni
             txtNombre.Text = dto.Nombre;
             txtApellido.Text = dto.Apellido;
 
-            // Setea la sucursal en el combo de alta/modif
+            // carga la sucursal en la combobox
             cbSucursal.SelectedValue = dto.SucursalId;
         }
     }

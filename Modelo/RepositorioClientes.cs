@@ -56,8 +56,9 @@ namespace Modelo
                 min.Descuento = descuentoDecimal;
 
             ctx.SaveChanges();
-        }
-
+        }   
+        
+        // se utiliza para la parte de registrar ventas
         public void Modificar(Cliente cliente)
         {
             context.Clientes.Update(cliente);
@@ -91,7 +92,7 @@ namespace Modelo
         public decimal ObtenerTotalCuentaCorriente()
         {
             return context.Clientes
-                          .OfType<Mayorista>()   // solo mayoristas
+                          .OfType<Mayorista>()   
                           .Sum(m => m.MontoDebe);
         }
 

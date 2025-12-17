@@ -47,16 +47,16 @@ namespace Controladora
 
         public string Eliminar(int sucursalId)
         {
-            // Verifico si la sucursal tiene stock asociado
+            // Verifico si la sucursal tiene stock
             var stockDeSucursal = repoStock.ListarPorSucursal(sucursalId);
 
             if (stockDeSucursal.Any())
             {
-                // Si tiene, NO dejo eliminar y manda una excepción
+                // Si tiene,no dejo eliminar
                 throw new Exception("No se puede eliminar la sucursal porque tiene productos asociados en su stock.");
             }
 
-            // Si no tiene stock, la elimina
+            // Si no tiene stock, se elimina
             repo.Eliminar(sucursalId);
             return "Sucursal eliminada correctamente.";
         }

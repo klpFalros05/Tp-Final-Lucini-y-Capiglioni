@@ -14,7 +14,7 @@ namespace Tp_Final_Lucini_y_Capiglioni
     public partial class Form3 : Form
     {
         private int _idSeleccionado = 0;
-        private string _filtroActual = "Todos"; // Todos / Mayoristas / Minoristas
+        private string _filtroActual = "Todos";
 
         public Form3()
         {

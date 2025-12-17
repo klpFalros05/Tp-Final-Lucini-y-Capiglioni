@@ -28,7 +28,6 @@ namespace Controladora
 
         private ControladoraVentas() { }
 
-        // ----------------- Cálculo de totales -----------------
         public (decimal Subtotal, decimal Descuento, decimal Total)
             CalcularTotales(int idCliente, List<DetalleVenta> detalles)
         {
@@ -41,12 +40,12 @@ namespace Controladora
             var cliente = repoClientes.ObtenerPorId(idCliente);
             if (cliente is Mayorista may)
             {
-                // Mayorista.Descuento = 0.10m, por ejemplo
+                //Descuento Mayorista
                 descuento = subtotal * may.Descuento;
             }
             else if (cliente is Minorista min)
             {
-                // Minorista.Descuento = 0.05m, por ejemplo
+                // Descuento Minorista
                 descuento = subtotal * min.Descuento;
             }
 
@@ -54,23 +53,13 @@ namespace Controladora
             return (subtotal, descuento, total);
         }
 
-        // ----------------- Registrar venta -----------------
-        public string RegistrarVenta(
-            int sucursalId,
-            int idCliente,
-            int vendedorId,
-            MetodoPago metodoPago,
-            DateTime fecha,
-            bool pagaAhora,
+        public string RegistrarVenta(int sucursalId,int idCliente,int vendedorId,MetodoPago metodoPago,DateTime fecha,bool pagaAhora,
             List<DetalleVenta> detalles)
         {
             if (detalles == null || !detalles.Any())
                 throw new Exception("El carrito está vacío.");
 
-            // 1) Recalcular totales
             var (subtotal, descuento, total) = CalcularTotales(idCliente, detalles);
-
-            // 2) Validar stock en la sucursal y descontarlo
             foreach (var det in detalles)
             {
                 var stock = repoStock.Obtener(sucursalId, det.ProductoId)
@@ -78,12 +67,12 @@ namespace Controladora
 
                 if (det.Cantidad > stock.Cantidad)
                     throw new Exception($"No hay stock suficiente de {stock.Producto.Nombre} en la sucursal.");
-
+                
+                //Se resta el stock y se actualiza
                 stock.Cantidad -= det.Cantidad;
                 repoStock.Actualizar(stock);
             }
 
-            // 3) Crear la Venta con sus detalles
             var venta = new Venta
             {
                 Fecha = fecha,
@@ -100,22 +89,21 @@ namespace Controladora
                 }).ToList()
             };
 
-            // 4) Actualizar estado de cuenta del mayorista
+            //Actualiza estado cuenta mayorista
             var cliente = repoClientes.ObtenerPorId(idCliente);
             if (cliente is Mayorista may)
             {
-                // Si compra en cuenta corriente, sumamos al monto que debe
+                // Si se paga en cuenta corriente se le suma el monto que debe
                 if (!pagaAhora)
                 {
                     may.MontoDebe += total;
                 }
 
-                // Estado de cuenta según si debe algo o no
+                // Estado de cuenta (si debe o no)
                 may.EstadoCuenta = may.MontoDebe > 0
                     ? EstadoDeCuenta.Debe
                     : EstadoDeCuenta.AlDia;
 
-                // Guardamos cambios en la BD
                 repoClientes.Modificar(may);
             }
             repoVentas.RegistrarVenta(venta);

@@ -26,10 +26,8 @@ namespace Tp_Final_Lucini_y_Capiglioni
             CargarCombosSucursales();
         }
 
-        // Cargas iniciales
         private void ConfigurarGrillas()
         {
-            // Grilla de productos (stock general)
             dgvProductosStock.AutoGenerateColumns = false;
             dgvProductosStock.Columns.Clear();
 
@@ -65,7 +63,6 @@ namespace Tp_Final_Lucini_y_Capiglioni
                 HeaderText = "Stock total"
             });
 
-            // Grilla de stock por sucursal
             dgvStockPorSucursal.AutoGenerateColumns = false;
             dgvStockPorSucursal.Columns.Clear();
 
@@ -120,7 +117,6 @@ namespace Tp_Final_Lucini_y_Capiglioni
             cmbSucursalVer.ValueMember = "SucursalId";
         }
 
-        // Sucursales
         private Sucursal? SucursalSeleccionada =>
             dgvSucursales.CurrentRow?.DataBoundItem as Sucursal;
 
@@ -207,8 +203,8 @@ namespace Tp_Final_Lucini_y_Capiglioni
 
                 MessageBox.Show(msg, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                CargarStockPorSucursal(sucursalId); // grilla inferior
-                CargarProductos();                  // grilla de stock general
+                CargarStockPorSucursal(sucursalId); 
+                CargarProductos();                  
             }
             catch (Exception ex)
             {

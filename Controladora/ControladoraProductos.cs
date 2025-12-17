@@ -24,11 +24,8 @@ namespace Controladora
                 return instancia;
             }
         }
-
-        // ctor privado para el Singleton
         private ControladoraProductos() { }
 
-        // ---------- Métodos que usa la Vista -----------
         public List<Producto> ListarProductos()
         {
             return repositorioProductos.Listar();

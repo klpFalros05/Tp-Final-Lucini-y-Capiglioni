@@ -37,7 +37,7 @@ namespace Modelo
             // Venta - Vendedor
             modelBuilder.Entity<Venta>()
                 .HasOne(v => v.Vendedor)
-                .WithMany()                 // si después ponemos la List<Venta> en Vendedor, acá va .WithMany(x => x.Ventas)
+                .WithMany()              
                 .HasForeignKey(v => v.VendedorId)
                 .OnDelete(DeleteBehavior.Restrict);
 

@@ -17,7 +17,6 @@ namespace Modelo
             context = new ContextoVentas();
         }
 
-        /// Registra una venta con sus detalles
         public void RegistrarVenta(Venta venta)
         {
             context.Ventas.Add(venta);
@@ -31,7 +30,7 @@ namespace Modelo
                                .Include(v => v.Cliente)
                                .Include(v => v.Vendedor)
                                .Include(v => v.Detalles)
-                                   .ThenInclude(d => d.Producto)
+                               .ThenInclude(d => d.Producto)
                                .AsQueryable();
 
             if (desde.HasValue)
@@ -71,7 +70,7 @@ namespace Modelo
                           .Include(v => v.Sucursal)
                           .Include(v => v.Vendedor)
                           .Include(v => v.Detalles)
-                              .ThenInclude(d => d.Producto)
+                          .ThenInclude(d => d.Producto)
                           .FirstOrDefault(v => v.VentaId == id);
         }
     }

@@ -34,20 +34,16 @@ namespace Controladora
             if (cantidad <= 0)
                 throw new Exception("La cantidad debe ser mayor a cero.");
 
-            // 1) Traigo el producto desde el repositorio
             var producto = repoProductos.ObtenerPorId(productoId)
                            ?? throw new Exception("Producto no encontrado.");
 
-            // 2) Valido stock disponible en el depósito (stock general)
             if (producto.StockTotal < cantidad)
                 throw new Exception(
                     $"No hay stock suficiente en el depósito. Stock disponible: {producto.StockTotal}");
 
-            // 3) Descuento del stock general (depósito)
             producto.StockTotal -= cantidad;
-            repoProductos.ModificarProducto(producto);  // guarda el cambio en la BD
+            repoProductos.ModificarProducto(producto); 
 
-            // 4) Asigno el stock a la sucursal (crea/actualiza la fila en Stocks)
             repoStocks.AgregarOActualizar(sucursalId, productoId, cantidad);
 
             return "Stock asignado a la sucursal.";

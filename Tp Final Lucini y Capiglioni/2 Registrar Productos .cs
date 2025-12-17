@@ -25,7 +25,6 @@ namespace Tp_Final_Lucini_y_Capiglioni
             CargarProductos();
         }
 
-        // --------- Configuración de grilla ---------
         private void ConfigurarGrilla()
         {
             dgvProductos.AutoGenerateColumns = false;
@@ -95,7 +94,6 @@ namespace Tp_Final_Lucini_y_Capiglioni
         private Producto? ProductoSeleccionado =>
             dgvProductos.CurrentRow?.DataBoundItem as Producto;
 
-        // Cuando cambia la selección, cargo los datos en los controles
         private void dgvProductos_SelectionChanged(object sender, EventArgs e)
         {
             var prod = ProductoSeleccionado;
@@ -109,7 +107,6 @@ namespace Tp_Final_Lucini_y_Capiglioni
             nudCantidad.Value = prod.StockTotal;
         }
 
-        // --------- Botón Agregar ---------
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             try
@@ -138,7 +135,6 @@ namespace Tp_Final_Lucini_y_Capiglioni
             }
         }
 
-        // --------- Botón Modificar ---------
         private void btnModificar_Click(object sender, EventArgs e)
         {
             var prod = ProductoSeleccionado;
@@ -175,7 +171,6 @@ namespace Tp_Final_Lucini_y_Capiglioni
             }
         }
 
-        // --------- Botón Eliminar ---------
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             var prod = ProductoSeleccionado;

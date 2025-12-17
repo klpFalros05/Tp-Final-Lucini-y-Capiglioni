@@ -17,7 +17,6 @@ namespace Modelo
             context = new ContextoVentas();
         }
 
-        // Listar stock de una sucursal
         public List<Stock> ListarPorSucursal(int sucursalId)
         {
             return context.Stocks
@@ -27,7 +26,7 @@ namespace Modelo
                           .ToList();
         }
 
-        // Obtener la fila de stock de un producto en una sucursal
+        // Obtener el stock de un producto en una sucursal
         public Stock? Obtener(int sucursalId, int productoId)
         {
             return context.Stocks
@@ -35,7 +34,6 @@ namespace Modelo
                                                s.ProductoId == productoId);
         }
 
-        // Agregar o actualizar stock (para no duplicar filas)
         public void AgregarOActualizar(int sucursalId, int productoId, int cantidad)
         {
             var stock = Obtener(sucursalId, productoId);

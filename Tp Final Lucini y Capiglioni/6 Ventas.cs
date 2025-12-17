@@ -41,10 +41,8 @@ namespace Tp_Final_Lucini_y_Capiglioni
             cmbCliente_SelectedIndexChanged_1(null, EventArgs.Empty);
         }
 
-        //Cargar DataGrids
         private void CargaDGV()
         {
-            // Productos de la sucursal
             dgvProductos.AutoGenerateColumns = false;
             dgvProductos.Columns.Clear();
             dgvProductos.ReadOnly = true;
@@ -95,7 +93,6 @@ namespace Tp_Final_Lucini_y_Capiglioni
                 HeaderText = "Stock sucursal"
             });
 
-            // Carrito
             dgvCarrito.AutoGenerateColumns = false;
             dgvCarrito.Columns.Clear();
             dgvCarrito.ReadOnly = true;
@@ -126,7 +123,6 @@ namespace Tp_Final_Lucini_y_Capiglioni
             });
         }
 
-        // ================== Cargas iniciales ==================
         private void CargarSucursales()
         {
             var repoSuc = new RepositorioSucursales();
@@ -181,7 +177,6 @@ namespace Tp_Final_Lucini_y_Capiglioni
             cmbMetodoDePago.SelectedIndex = 0;
         }
 
-        // ================== Productos por sucursal ==================
         private void CargarProductosSucursal(int sucursalId)
         {
             var repoStock = new RepositorioStockPorSucursal();
@@ -189,18 +184,17 @@ namespace Tp_Final_Lucini_y_Capiglioni
 
             var datos = listaStock.Select(s =>
             {
-                // Cantidad que ya está en el carrito para ese producto
                 int reservado = carrito
                     .Where(d => d.ProductoId == s.ProductoId)
                     .Sum(d => d.Cantidad);
 
-                // Stock disponible = stock real - lo reservado en el carrito
+                
                 int disponible = s.Cantidad - reservado;
-                if (disponible < 0) disponible = 0; // por las dudas
+                if (disponible < 0) disponible = 0;
 
                 return new
                 {
-                    // columnas que muestra la grilla
+                    
                     Id = s.ProductoId,
                     Codigo = s.Producto.Codigo,
                     Nombre = s.Producto.Nombre,
@@ -237,7 +231,6 @@ namespace Tp_Final_Lucini_y_Capiglioni
             }
         }
 
-        // ================== Carrito ==================
         private void RefrescarProductosSucursal()
         {
             if (cmbSucursal.SelectedValue is int sucursalId)
@@ -312,7 +305,6 @@ namespace Tp_Final_Lucini_y_Capiglioni
             RefrescarProductosSucursal();
         }
 
-        // ================== Totales ==================
         private void ActualizarTotales()
         {
             if (cmbCliente.SelectedValue is not int idCliente)
@@ -335,7 +327,6 @@ namespace Tp_Final_Lucini_y_Capiglioni
         {
             ActualizarTotales();
 
-            // Si el combo de "Cuando paga" todavía no tiene ítems, salgo y no hago nada
             if (cmbCuandoPaga.Items.Count == 0)
                 return;
 
@@ -359,7 +350,6 @@ namespace Tp_Final_Lucini_y_Capiglioni
             }
             else
             {
-                // Por si no hay cliente seleccionado todavía
                 if (cmbCuandoPaga.Items.Count > 0)
                     cmbCuandoPaga.SelectedIndex = 0;
 
@@ -367,7 +357,6 @@ namespace Tp_Final_Lucini_y_Capiglioni
             }
         }
 
-        // ================== Registrar venta ==================
         private void btnRegistrarVenta_Click(object sender, EventArgs e)
         {
             if (carrito.Count == 0)
@@ -389,17 +378,14 @@ namespace Tp_Final_Lucini_y_Capiglioni
             var metodoPago = (MetodoPago)cmbMetodoDePago.SelectedItem;
             bool pagaAhora;
 
-            // Forzar regla según tipo de cliente
             var cliente = ControladoraClientes.Instancia.ObtenerPorId(idCliente);
 
             if (cliente is Mayorista)
             {
-                // Mayorista: respetamos lo que diga el combo
                 pagaAhora = (cmbCuandoPaga.SelectedIndex == 0);
             }
             else
             {
-                // Minorista: siempre paga ahora, aunque el combo diga otra cosa
                 pagaAhora = true;
             }
 
@@ -420,11 +406,10 @@ namespace Tp_Final_Lucini_y_Capiglioni
 
                 carrito.Clear();
                 ActualizarTotales();
-                CargarProductosSucursal(sucursalId); // refresco stock de la sucursal
+                CargarProductosSucursal(sucursalId); 
             }
             catch (Exception ex)
             {
-                // Si hay una inner exception (SqlException de SQL Server), la mostramos
                 string mensaje = ex.InnerException?.Message ?? ex.Message;
 
                 MessageBox.Show(mensaje,
@@ -457,27 +442,26 @@ namespace Tp_Final_Lucini_y_Capiglioni
                 return;
             }
 
-            // 2) Datos generales
             var sucursal = (Sucursal)cmbSucursal.SelectedItem;
             string nombreSucursal = sucursal.NombreSucursal;
 
-            string nombreCliente = cmbCliente.Text;    // lo que se muestra en el combo
-            string nombreVendedor = cmbVendedor.Text;  // idem
+            string nombreCliente = cmbCliente.Text;    
+            string nombreVendedor = cmbVendedor.Text;  
             var metodoPago = (MetodoPago)cmbMetodoDePago.SelectedItem;
             DateTime fecha = dtpFecha.Value;
 
             int idCliente = (int)cmbCliente.SelectedValue;
 
-            // 3) Recalcular totales con la controladora (usa descuentos, etc.)
+           
             var totales = ControladoraVentas.Instancia
                             .CalcularTotales(idCliente, carrito.ToList());
 
-            // porcentaje de descuento = (monto desc / subtotal) * 100
+            
             decimal porcentajeDesc = 0m;
             if (totales.Subtotal > 0)
                 porcentajeDesc = (totales.Descuento / totales.Subtotal) * 100m;
 
-            // 4) Construir el texto de la factura
+           
             var sb = new StringBuilder();
 
             sb.AppendLine("************* FACTURA *************");
@@ -510,7 +494,7 @@ namespace Tp_Final_Lucini_y_Capiglioni
 
             string textoFactura = sb.ToString();
 
-            // 5) Mostrarla
+            
             MessageBox.Show(sb.ToString(),
                             "Factura",
                             MessageBoxButtons.OK,
@@ -532,7 +516,6 @@ namespace Tp_Final_Lucini_y_Capiglioni
 
                     if (dialog.ShowDialog() == DialogResult.OK)
                     {
-                        // Guardar el archivo
                         File.WriteAllText(dialog.FileName, textoFactura, Encoding.UTF8);
 
                         MessageBox.Show("Factura guardada en:\n" + dialog.FileName,

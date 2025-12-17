@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="ConexionSql" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">Data Source=MÁXIMO\SQLEXPRESS01;Initial Catalog=Final DAS;Integrated Security=True;Encrypt=False;TrustServerCertificate=True</Value>
+      <Value Profile="(Default)">Data Source=LAPTOP-IQ1OBU3N\SQLEXPRESS;Initial Catalog=TpFinalLuciniCapiglioni;Integrated Security=True;Encrypt=False;TrustServerCertificate=True</Value>
     </Setting>
   </Settings>
 </SettingsFile>
