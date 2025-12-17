@@ -26,7 +26,7 @@ namespace Tp_Final_Lucini_y_Capiglioni
             CargarCombosSucursales();
         }
 
-        // ================== CARGAS INICIALES ==================
+        // Cargas iniciales
         private void ConfigurarGrillas()
         {
             // Grilla de productos (stock general)
@@ -120,7 +120,7 @@ namespace Tp_Final_Lucini_y_Capiglioni
             cmbSucursalVer.ValueMember = "SucursalId";
         }
 
-        // ================== SUCURSALES (GRILLA) ==================
+        // Sucursales
         private Sucursal? SucursalSeleccionada =>
             dgvSucursales.CurrentRow?.DataBoundItem as Sucursal;
 
@@ -173,7 +173,7 @@ namespace Tp_Final_Lucini_y_Capiglioni
             }
         }
 
-        // ================== ASIGNAR STOCK A SUCURSAL ==================
+        //Stock por sucursales
         private Producto? ProductoSeleccionado =>
             dgvProductosStock.CurrentRow?.DataBoundItem as Producto;
 
@@ -207,7 +207,6 @@ namespace Tp_Final_Lucini_y_Capiglioni
 
                 MessageBox.Show(msg, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Refrescamos las dos vistas:
                 CargarStockPorSucursal(sucursalId); // grilla inferior
                 CargarProductos();                  // grilla de stock general
             }
@@ -218,7 +217,6 @@ namespace Tp_Final_Lucini_y_Capiglioni
             }
         }
 
-        // ================== VER STOCK POR SUCURSAL ==================
         private void btnProductosPorSucursal_Click_1(object sender, EventArgs e)
         {
             if (cmbSucursalVer.SelectedValue == null)
@@ -250,7 +248,6 @@ namespace Tp_Final_Lucini_y_Capiglioni
 
         private void cmbSucursalVer_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Opcional: cada vez que cambio la sucursal del combo, actualizo la grilla
             if (cmbSucursalVer.SelectedValue is int sucursalId)
             {
                 CargarStockPorSucursal(sucursalId);
