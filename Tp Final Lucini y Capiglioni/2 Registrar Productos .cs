@@ -89,6 +89,7 @@ namespace Tp_Final_Lucini_y_Capiglioni
             txtCategoria.Clear();
             nudPrecio.Value = 0;
             nudCantidad.Value = 0;
+            dgvProductos.ClearSelection();
         }
 
         private Producto? ProductoSeleccionado =>
@@ -205,6 +206,11 @@ namespace Tp_Final_Lucini_y_Capiglioni
                 MessageBox.Show(ex.Message, "Error al eliminar",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarCampos();
         }
     }
 }

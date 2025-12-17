@@ -11,6 +11,7 @@ namespace Controladora
     public class ControladoraSucursales
     {
         private readonly RepositorioSucursales repo = new RepositorioSucursales();
+        private readonly RepositorioStockPorSucursal repoStock = new RepositorioStockPorSucursal();
 
         private static ControladoraSucursales instancia;
         public static ControladoraSucursales Instancia
@@ -46,9 +47,18 @@ namespace Controladora
 
         public string Eliminar(int sucursalId)
         {
-            // acá podrías validar si tiene stock/ventas, etc.
+            // Verifico si la sucursal tiene stock asociado
+            var stockDeSucursal = repoStock.ListarPorSucursal(sucursalId);
+
+            if (stockDeSucursal.Any())
+            {
+                // Si tiene, NO dejo eliminar y manda una excepción
+                throw new Exception("No se puede eliminar la sucursal porque tiene productos asociados en su stock.");
+            }
+
+            // Si no tiene stock, la elimina
             repo.Eliminar(sucursalId);
-            return "Sucursal eliminada.";
+            return "Sucursal eliminada correctamente.";
         }
     }
 }
